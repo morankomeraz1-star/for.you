@@ -1,0 +1,1369 @@
+<html lang="he" dir="rtl"><head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>המגדלור | ארגז הכלים והתכנים של מורן קומרז</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+    <link href="https://fonts.googleapis.com/css2?family=Assistant:wght@300;400;600;700;800&amp;family=Frank+Ruhl+Libre:wght@500;700;900&amp;display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        sage: {
+                            50: '#f6f7f2',
+                            100: '#eaeee0',
+                            200: '#dce2cb',
+                            300: '#cad3b2',
+                            400: '#b3c095',
+                            500: '#8b996c',
+                            600: '#6e7b52',
+                            700: '#55603f',
+                            800: '#37412a',
+                            900: '#1e2418',
+                            950: '#12160e',
+                        },
+                        cream: '#f4f1ea'
+                    },
+                    fontFamily: {
+                        sans: ['Assistant', 'sans-serif'],
+                        serif: ['Frank Ruhl Libre', 'serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            background-color: #dce2cb;
+            color: #1e2418;
+            overflow-x: hidden;
+        }
+
+        /* Vintage Sunburst Background */
+        .sunburst-bg {
+            background: repeating-conic-gradient(
+                from 0deg at 20% 45%,
+                rgba(244, 241, 234, 0.28) 0deg 8deg,
+                transparent 8deg 16deg
+            );
+        }
+
+        /* Paper Deckle Border Effect */
+        .vintage-frame {
+            box-shadow: inset 0 0 0 8px #f4f1ea, inset 0 0 25px rgba(30, 36, 24, 0.25);
+        }
+
+        /* Stamp / Grunge Filter applied to Icons & Illustrations */
+        .stamp-effect {
+            filter: url(#grunge-stamp);
+        }
+
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #dce2cb;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #6e7b52;
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #37412a;
+        }
+
+        /* Card Hover Effects */
+        .tool-card, .tip-card {
+            transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+            background-color: rgba(244, 241, 234, 0.88);
+            backdrop-filter: blur(4px);
+        }
+        .tool-card:hover, .tip-card:hover {
+            transform: translateY(-6px);
+            background-color: rgba(244, 241, 234, 0.98);
+            box-shadow: 0 14px 28px rgba(30, 36, 24, 0.15), 0 10px 10px rgba(30, 36, 24, 0.1);
+        }
+
+        /* Beam Animation */
+        @keyframes pulse-beam {
+            0%, 100% { opacity: 0.55; }
+            50% { opacity: 0.8; }
+        }
+        .lighthouse-beam {
+            animation: pulse-beam 5s infinite ease-in-out;
+        }
+
+        /* Mobile & Accessibility Enhancements */
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .no-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+        @media (max-width: 640px) {
+            .vintage-frame {
+                box-shadow: inset 0 0 0 4px #f4f1ea, inset 0 0 14px rgba(30, 36, 24, 0.2);
+            }
+            /* Prevent iOS zoom on input focus */
+            input, select, textarea {
+                font-size: 16px !important;
+            }
+        }
+        /* Clear focus ring for keyboard & screen-reader accessibility */
+        button:focus-visible, a:focus-visible, input:focus-visible, select:focus-visible, textarea:focus-visible {
+            outline: 3px solid #37412a;
+            outline-offset: 2px;
+        }
+    </style>
+<style>*, ::before, ::after{--tw-border-spacing-x:0;--tw-border-spacing-y:0;--tw-translate-x:0;--tw-translate-y:0;--tw-rotate:0;--tw-skew-x:0;--tw-skew-y:0;--tw-scale-x:1;--tw-scale-y:1;--tw-pan-x: ;--tw-pan-y: ;--tw-pinch-zoom: ;--tw-scroll-snap-strictness:proximity;--tw-gradient-from-position: ;--tw-gradient-via-position: ;--tw-gradient-to-position: ;--tw-ordinal: ;--tw-slashed-zero: ;--tw-numeric-figure: ;--tw-numeric-spacing: ;--tw-numeric-fraction: ;--tw-ring-inset: ;--tw-ring-offset-width:0px;--tw-ring-offset-color:#fff;--tw-ring-color:rgb(59 130 246 / 0.5);--tw-ring-offset-shadow:0 0 #0000;--tw-ring-shadow:0 0 #0000;--tw-shadow:0 0 #0000;--tw-shadow-colored:0 0 #0000;--tw-blur: ;--tw-brightness: ;--tw-contrast: ;--tw-grayscale: ;--tw-hue-rotate: ;--tw-invert: ;--tw-saturate: ;--tw-sepia: ;--tw-drop-shadow: ;--tw-backdrop-blur: ;--tw-backdrop-brightness: ;--tw-backdrop-contrast: ;--tw-backdrop-grayscale: ;--tw-backdrop-hue-rotate: ;--tw-backdrop-invert: ;--tw-backdrop-opacity: ;--tw-backdrop-saturate: ;--tw-backdrop-sepia: ;--tw-contain-size: ;--tw-contain-layout: ;--tw-contain-paint: ;--tw-contain-style: }::backdrop{--tw-border-spacing-x:0;--tw-border-spacing-y:0;--tw-translate-x:0;--tw-translate-y:0;--tw-rotate:0;--tw-skew-x:0;--tw-skew-y:0;--tw-scale-x:1;--tw-scale-y:1;--tw-pan-x: ;--tw-pan-y: ;--tw-pinch-zoom: ;--tw-scroll-snap-strictness:proximity;--tw-gradient-from-position: ;--tw-gradient-via-position: ;--tw-gradient-to-position: ;--tw-ordinal: ;--tw-slashed-zero: ;--tw-numeric-figure: ;--tw-numeric-spacing: ;--tw-numeric-fraction: ;--tw-ring-inset: ;--tw-ring-offset-width:0px;--tw-ring-offset-color:#fff;--tw-ring-color:rgb(59 130 246 / 0.5);--tw-ring-offset-shadow:0 0 #0000;--tw-ring-shadow:0 0 #0000;--tw-shadow:0 0 #0000;--tw-shadow-colored:0 0 #0000;--tw-blur: ;--tw-brightness: ;--tw-contrast: ;--tw-grayscale: ;--tw-hue-rotate: ;--tw-invert: ;--tw-saturate: ;--tw-sepia: ;--tw-drop-shadow: ;--tw-backdrop-blur: ;--tw-backdrop-brightness: ;--tw-backdrop-contrast: ;--tw-backdrop-grayscale: ;--tw-backdrop-hue-rotate: ;--tw-backdrop-invert: ;--tw-backdrop-opacity: ;--tw-backdrop-saturate: ;--tw-backdrop-sepia: ;--tw-contain-size: ;--tw-contain-layout: ;--tw-contain-paint: ;--tw-contain-style: }/* ! tailwindcss v3.4.17 | MIT License | https://tailwindcss.com */*,::after,::before{box-sizing:border-box;border-width:0;border-style:solid;border-color:#e5e7eb}::after,::before{--tw-content:''}:host,html{line-height:1.5;-webkit-text-size-adjust:100%;-moz-tab-size:4;tab-size:4;font-family:Assistant, sans-serif;font-feature-settings:normal;font-variation-settings:normal;-webkit-tap-highlight-color:transparent}body{margin:0;line-height:inherit}hr{height:0;color:inherit;border-top-width:1px}abbr:where([title]){-webkit-text-decoration:underline dotted;text-decoration:underline dotted}h1,h2,h3,h4,h5,h6{font-size:inherit;font-weight:inherit}a{color:inherit;text-decoration:inherit}b,strong{font-weight:bolder}code,kbd,pre,samp{font-family:ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;font-feature-settings:normal;font-variation-settings:normal;font-size:1em}small{font-size:80%}sub,sup{font-size:75%;line-height:0;position:relative;vertical-align:baseline}sub{bottom:-.25em}sup{top:-.5em}table{text-indent:0;border-color:inherit;border-collapse:collapse}button,input,optgroup,select,textarea{font-family:inherit;font-feature-settings:inherit;font-variation-settings:inherit;font-size:100%;font-weight:inherit;line-height:inherit;letter-spacing:inherit;color:inherit;margin:0;padding:0}button,select{text-transform:none}button,input:where([type=button]),input:where([type=reset]),input:where([type=submit]){-webkit-appearance:button;background-color:transparent;background-image:none}:-moz-focusring{outline:auto}:-moz-ui-invalid{box-shadow:none}progress{vertical-align:baseline}::-webkit-inner-spin-button,::-webkit-outer-spin-button{height:auto}[type=search]{-webkit-appearance:textfield;outline-offset:-2px}::-webkit-search-decoration{-webkit-appearance:none}::-webkit-file-upload-button{-webkit-appearance:button;font:inherit}summary{display:list-item}blockquote,dd,dl,figure,h1,h2,h3,h4,h5,h6,hr,p,pre{margin:0}fieldset{margin:0;padding:0}legend{padding:0}menu,ol,ul{list-style:none;margin:0;padding:0}dialog{padding:0}textarea{resize:vertical}input::placeholder,textarea::placeholder{opacity:1;color:#9ca3af}[role=button],button{cursor:pointer}:disabled{cursor:default}audio,canvas,embed,iframe,img,object,svg,video{display:block;vertical-align:middle}img,video{max-width:100%;height:auto}[hidden]:where(:not([hidden=until-found])){display:none}.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0, 0, 0, 0);white-space:nowrap;border-width:0}.pointer-events-none{pointer-events:none}.fixed{position:fixed}.absolute{position:absolute}.relative{position:relative}.sticky{position:sticky}.inset-0{inset:0px}.bottom-3{bottom:0.75rem}.bottom-4{bottom:1rem}.left-1\/2{left:50%}.left-3\.5{left:0.875rem}.left-4{left:1rem}.right-4{right:1rem}.top-0{top:0px}.top-3{top:0.75rem}.z-10{z-index:10}.z-20{z-index:20}.z-30{z-index:30}.z-40{z-index:40}.z-50{z-index:50}.order-1{order:1}.order-2{order:2}.-mx-1{margin-left:-0.25rem;margin-right:-0.25rem}.mx-auto{margin-left:auto;margin-right:auto}.mb-0\.5{margin-bottom:0.125rem}.mb-1{margin-bottom:0.25rem}.mb-2{margin-bottom:0.5rem}.mb-3{margin-bottom:0.75rem}.mb-4{margin-bottom:1rem}.mb-5{margin-bottom:1.25rem}.mb-6{margin-bottom:1.5rem}.mb-7{margin-bottom:1.75rem}.mb-8{margin-bottom:2rem}.mt-1{margin-top:0.25rem}.mt-12{margin-top:3rem}.ml-auto{margin-left:auto}.block{display:block}.flex{display:flex}.inline-flex{display:inline-flex}.grid{display:grid}.hidden{display:none}.h-12{height:3rem}.h-2{height:0.5rem}.h-4{height:1rem}.h-5{height:1.25rem}.h-6{height:1.5rem}.h-8{height:2rem}.h-9{height:2.25rem}.h-full{height:100%}.h-1\.5{height:0.375rem}.h-14{height:3.5rem}.max-h-\[88vh\]{max-height:88vh}.max-h-\[90vh\]{max-height:90vh}.min-h-\[32px\]{min-height:32px}.min-h-\[42px\]{min-height:42px}.min-h-\[44px\]{min-height:44px}.min-h-\[48px\]{min-height:48px}.min-h-screen{min-height:100vh}.w-12{width:3rem}.w-2{width:0.5rem}.w-4{width:1rem}.w-5{width:1.25rem}.w-6{width:1.5rem}.w-9{width:2.25rem}.w-full{width:100%}.w-px{width:1px}.w-1\.5{width:0.375rem}.w-14{width:3.5rem}.w-8{width:2rem}.w-fit{width:-moz-fit-content;width:fit-content}.min-w-0{min-width:0px}.min-w-\[42px\]{min-width:42px}.max-w-2xl{max-width:42rem}.max-w-7xl{max-width:80rem}.max-w-lg{max-width:32rem}.max-w-md{max-width:28rem}.max-w-sm{max-width:24rem}.flex-1{flex:1 1 0%}.shrink-0{flex-shrink:0}.flex-grow{flex-grow:1}.-translate-x-1\/2{--tw-translate-x:-50%;transform:translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y))}@keyframes ping{75%, 100%{transform:scale(2);opacity:0}}.animate-ping{animation:ping 1s cubic-bezier(0, 0, 0.2, 1) infinite}.cursor-pointer{cursor:pointer}.grid-cols-1{grid-template-columns:repeat(1, minmax(0, 1fr))}.flex-col{flex-direction:column}.flex-col-reverse{flex-direction:column-reverse}.flex-wrap{flex-wrap:wrap}.items-start{align-items:flex-start}.items-end{align-items:flex-end}.items-center{align-items:center}.items-stretch{align-items:stretch}.justify-end{justify-content:flex-end}.justify-center{justify-content:center}.justify-between{justify-content:space-between}.justify-around{justify-content:space-around}.gap-1{gap:0.25rem}.gap-1\.5{gap:0.375rem}.gap-2{gap:0.5rem}.gap-2\.5{gap:0.625rem}.gap-3{gap:0.75rem}.gap-3\.5{gap:0.875rem}.gap-4{gap:1rem}.gap-5{gap:1.25rem}.gap-6{gap:1.5rem}.space-y-4 > :not([hidden]) ~ :not([hidden]){--tw-space-y-reverse:0;margin-top:calc(1rem * calc(1 - var(--tw-space-y-reverse)));margin-bottom:calc(1rem * var(--tw-space-y-reverse))}.overflow-hidden{overflow:hidden}.overflow-x-auto{overflow-x:auto}.overflow-y-auto{overflow-y:auto}.truncate{overflow:hidden;text-overflow:ellipsis;white-space:nowrap}.whitespace-nowrap{white-space:nowrap}.whitespace-pre-line{white-space:pre-line}.rounded-2xl{border-radius:1rem}.rounded-full{border-radius:9999px}.rounded-lg{border-radius:0.5rem}.rounded-xl{border-radius:0.75rem}.rounded-md{border-radius:0.375rem}.rounded{border-radius:0.25rem}.rounded-t-3xl{border-top-left-radius:1.5rem;border-top-right-radius:1.5rem}.border{border-width:1px}.border-2{border-width:2px}.border-b{border-bottom-width:1px}.border-b-2{border-bottom-width:2px}.border-b-4{border-bottom-width:4px}.border-t{border-top-width:1px}.border-t-2{border-top-width:2px}.border-t-4{border-top-width:4px}.border-dashed{border-style:dashed}.border-sage-300{--tw-border-opacity:1;border-color:rgb(202 211 178 / var(--tw-border-opacity, 1))}.border-sage-400{--tw-border-opacity:1;border-color:rgb(179 192 149 / var(--tw-border-opacity, 1))}.border-sage-400\/50{border-color:rgb(179 192 149 / 0.5)}.border-sage-500{--tw-border-opacity:1;border-color:rgb(139 153 108 / var(--tw-border-opacity, 1))}.border-sage-500\/30{border-color:rgb(139 153 108 / 0.3)}.border-sage-500\/60{border-color:rgb(139 153 108 / 0.6)}.border-sage-600{--tw-border-opacity:1;border-color:rgb(110 123 82 / var(--tw-border-opacity, 1))}.border-sage-600\/30{border-color:rgb(110 123 82 / 0.3)}.border-sage-600\/40{border-color:rgb(110 123 82 / 0.4)}.border-sage-700{--tw-border-opacity:1;border-color:rgb(85 96 63 / var(--tw-border-opacity, 1))}.border-sage-800{--tw-border-opacity:1;border-color:rgb(55 65 42 / var(--tw-border-opacity, 1))}.border-sage-800\/20{border-color:rgb(55 65 42 / 0.2)}.border-sage-800\/30{border-color:rgb(55 65 42 / 0.3)}.border-sage-800\/40{border-color:rgb(55 65 42 / 0.4)}.border-sage-900{--tw-border-opacity:1;border-color:rgb(30 36 24 / var(--tw-border-opacity, 1))}.border-sage-400\/30{border-color:rgb(179 192 149 / 0.3)}.border-sage-400\/40{border-color:rgb(179 192 149 / 0.4)}.border-sage-800\/25{border-color:rgb(55 65 42 / 0.25)}.bg-amber-500{--tw-bg-opacity:1;background-color:rgb(245 158 11 / var(--tw-bg-opacity, 1))}.bg-cream{--tw-bg-opacity:1;background-color:rgb(244 241 234 / var(--tw-bg-opacity, 1))}.bg-cream\/60{background-color:rgb(244 241 234 / 0.6)}.bg-cream\/80{background-color:rgb(244 241 234 / 0.8)}.bg-cream\/85{background-color:rgb(244 241 234 / 0.85)}.bg-cream\/90{background-color:rgb(244 241 234 / 0.9)}.bg-cream\/95{background-color:rgb(244 241 234 / 0.95)}.bg-green-400{--tw-bg-opacity:1;background-color:rgb(74 222 128 / var(--tw-bg-opacity, 1))}.bg-red-800{--tw-bg-opacity:1;background-color:rgb(153 27 27 / var(--tw-bg-opacity, 1))}.bg-sage-100{--tw-bg-opacity:1;background-color:rgb(234 238 224 / var(--tw-bg-opacity, 1))}.bg-sage-100\/90{background-color:rgb(234 238 224 / 0.9)}.bg-sage-200\/70{background-color:rgb(220 226 203 / 0.7)}.bg-sage-200\/80{background-color:rgb(220 226 203 / 0.8)}.bg-sage-300{--tw-bg-opacity:1;background-color:rgb(202 211 178 / var(--tw-bg-opacity, 1))}.bg-sage-400{--tw-bg-opacity:1;background-color:rgb(179 192 149 / var(--tw-bg-opacity, 1))}.bg-sage-500\/40{background-color:rgb(139 153 108 / 0.4)}.bg-sage-700{--tw-bg-opacity:1;background-color:rgb(85 96 63 / var(--tw-bg-opacity, 1))}.bg-sage-800{--tw-bg-opacity:1;background-color:rgb(55 65 42 / var(--tw-bg-opacity, 1))}.bg-sage-800\/70{background-color:rgb(55 65 42 / 0.7)}.bg-sage-900{--tw-bg-opacity:1;background-color:rgb(30 36 24 / var(--tw-bg-opacity, 1))}.bg-sage-950{--tw-bg-opacity:1;background-color:rgb(18 22 14 / var(--tw-bg-opacity, 1))}.bg-sage-950\/75{background-color:rgb(18 22 14 / 0.75)}.bg-sage-200\/50{background-color:rgb(220 226 203 / 0.5)}.bg-sage-200\/60{background-color:rgb(220 226 203 / 0.6)}.bg-sage-200\/90{background-color:rgb(220 226 203 / 0.9)}.bg-sage-300\/80{background-color:rgb(202 211 178 / 0.8)}.p-0{padding:0px}.p-2{padding:0.5rem}.p-2\.5{padding:0.625rem}.p-3{padding:0.75rem}.p-3\.5{padding:0.875rem}.p-4{padding:1rem}.p-5{padding:1.25rem}.p-6{padding:1.5rem}.px-1{padding-left:0.25rem;padding-right:0.25rem}.px-2\.5{padding-left:0.625rem;padding-right:0.625rem}.px-3{padding-left:0.75rem;padding-right:0.75rem}.px-3\.5{padding-left:0.875rem;padding-right:0.875rem}.px-4{padding-left:1rem;padding-right:1rem}.px-5{padding-left:1.25rem;padding-right:1.25rem}.px-6{padding-left:1.5rem;padding-right:1.5rem}.py-0\.5{padding-top:0.125rem;padding-bottom:0.125rem}.py-1{padding-top:0.25rem;padding-bottom:0.25rem}.py-1\.5{padding-top:0.375rem;padding-bottom:0.375rem}.py-10{padding-top:2.5rem;padding-bottom:2.5rem}.py-16{padding-top:4rem;padding-bottom:4rem}.py-2{padding-top:0.5rem;padding-bottom:0.5rem}.py-2\.5{padding-top:0.625rem;padding-bottom:0.625rem}.py-3{padding-top:0.75rem;padding-bottom:0.75rem}.py-3\.5{padding-top:0.875rem;padding-bottom:0.875rem}.py-8{padding-top:2rem;padding-bottom:2rem}.pb-1{padding-bottom:0.25rem}.pb-24{padding-bottom:6rem}.pb-4{padding-bottom:1rem}.pb-6{padding-bottom:1.5rem}.pl-1{padding-left:0.25rem}.pl-10{padding-left:2.5rem}.pr-4{padding-right:1rem}.pt-6{padding-top:1.5rem}.pt-3{padding-top:0.75rem}.pt-4{padding-top:1rem}.pb-3{padding-bottom:0.75rem}.text-left{text-align:left}.text-center{text-align:center}.text-right{text-align:right}.font-serif{font-family:Frank Ruhl Libre, serif}.text-2xl{font-size:1.5rem;line-height:2rem}.text-3xl{font-size:1.875rem;line-height:2.25rem}.text-\[11px\]{font-size:11px}.text-base{font-size:1rem;line-height:1.5rem}.text-lg{font-size:1.125rem;line-height:1.75rem}.text-sm{font-size:0.875rem;line-height:1.25rem}.text-xl{font-size:1.25rem;line-height:1.75rem}.text-xs{font-size:0.75rem;line-height:1rem}.font-black{font-weight:900}.font-bold{font-weight:700}.font-extrabold{font-weight:800}.font-medium{font-weight:500}.font-semibold{font-weight:600}.leading-none{line-height:1}.leading-relaxed{line-height:1.625}.leading-snug{line-height:1.375}.leading-tight{line-height:1.25}.tracking-tight{letter-spacing:-0.025em}.tracking-widest{letter-spacing:0.1em}.text-cream{--tw-text-opacity:1;color:rgb(244 241 234 / var(--tw-text-opacity, 1))}.text-red-700{--tw-text-opacity:1;color:rgb(185 28 28 / var(--tw-text-opacity, 1))}.text-sage-100{--tw-text-opacity:1;color:rgb(234 238 224 / var(--tw-text-opacity, 1))}.text-sage-200{--tw-text-opacity:1;color:rgb(220 226 203 / var(--tw-text-opacity, 1))}.text-sage-300{--tw-text-opacity:1;color:rgb(202 211 178 / var(--tw-text-opacity, 1))}.text-sage-400{--tw-text-opacity:1;color:rgb(179 192 149 / var(--tw-text-opacity, 1))}.text-sage-700{--tw-text-opacity:1;color:rgb(85 96 63 / var(--tw-text-opacity, 1))}.text-sage-800{--tw-text-opacity:1;color:rgb(55 65 42 / var(--tw-text-opacity, 1))}.text-sage-900{--tw-text-opacity:1;color:rgb(30 36 24 / var(--tw-text-opacity, 1))}.text-sage-950{--tw-text-opacity:1;color:rgb(18 22 14 / var(--tw-text-opacity, 1))}.underline{-webkit-text-decoration-line:underline;text-decoration-line:underline}.placeholder-sage-700::placeholder{--tw-placeholder-opacity:1;color:rgb(85 96 63 / var(--tw-placeholder-opacity, 1))}.opacity-30{opacity:0.3}.opacity-45{opacity:0.45}.mix-blend-multiply{mix-blend-mode:multiply}.shadow{--tw-shadow:0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1);--tw-shadow-colored:0 1px 3px 0 var(--tw-shadow-color), 0 1px 2px -1px var(--tw-shadow-color);box-shadow:var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow)}.shadow-2xl{--tw-shadow:0 25px 50px -12px rgb(0 0 0 / 0.25);--tw-shadow-colored:0 25px 50px -12px var(--tw-shadow-color);box-shadow:var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow)}.shadow-lg{--tw-shadow:0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);--tw-shadow-colored:0 10px 15px -3px var(--tw-shadow-color), 0 4px 6px -4px var(--tw-shadow-color);box-shadow:var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow)}.shadow-md{--tw-shadow:0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);--tw-shadow-colored:0 4px 6px -1px var(--tw-shadow-color), 0 2px 4px -2px var(--tw-shadow-color);box-shadow:var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow)}.shadow-sm{--tw-shadow:0 1px 2px 0 rgb(0 0 0 / 0.05);--tw-shadow-colored:0 1px 2px 0 var(--tw-shadow-color);box-shadow:var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow)}.backdrop-blur{--tw-backdrop-blur:blur(8px);-webkit-backdrop-filter:var(--tw-backdrop-blur) var(--tw-backdrop-brightness) var(--tw-backdrop-contrast) var(--tw-backdrop-grayscale) var(--tw-backdrop-hue-rotate) var(--tw-backdrop-invert) var(--tw-backdrop-opacity) var(--tw-backdrop-saturate) var(--tw-backdrop-sepia);backdrop-filter:var(--tw-backdrop-blur) var(--tw-backdrop-brightness) var(--tw-backdrop-contrast) var(--tw-backdrop-grayscale) var(--tw-backdrop-hue-rotate) var(--tw-backdrop-invert) var(--tw-backdrop-opacity) var(--tw-backdrop-saturate) var(--tw-backdrop-sepia)}.backdrop-blur-\[2px\]{--tw-backdrop-blur:blur(2px);-webkit-backdrop-filter:var(--tw-backdrop-blur) var(--tw-backdrop-brightness) var(--tw-backdrop-contrast) var(--tw-backdrop-grayscale) var(--tw-backdrop-hue-rotate) var(--tw-backdrop-invert) var(--tw-backdrop-opacity) var(--tw-backdrop-saturate) var(--tw-backdrop-sepia);backdrop-filter:var(--tw-backdrop-blur) var(--tw-backdrop-brightness) var(--tw-backdrop-contrast) var(--tw-backdrop-grayscale) var(--tw-backdrop-hue-rotate) var(--tw-backdrop-invert) var(--tw-backdrop-opacity) var(--tw-backdrop-saturate) var(--tw-backdrop-sepia)}.backdrop-blur-md{--tw-backdrop-blur:blur(12px);-webkit-backdrop-filter:var(--tw-backdrop-blur) var(--tw-backdrop-brightness) var(--tw-backdrop-contrast) var(--tw-backdrop-grayscale) var(--tw-backdrop-hue-rotate) var(--tw-backdrop-invert) var(--tw-backdrop-opacity) var(--tw-backdrop-saturate) var(--tw-backdrop-sepia);backdrop-filter:var(--tw-backdrop-blur) var(--tw-backdrop-brightness) var(--tw-backdrop-contrast) var(--tw-backdrop-grayscale) var(--tw-backdrop-hue-rotate) var(--tw-backdrop-invert) var(--tw-backdrop-opacity) var(--tw-backdrop-saturate) var(--tw-backdrop-sepia)}.backdrop-blur-sm{--tw-backdrop-blur:blur(4px);-webkit-backdrop-filter:var(--tw-backdrop-blur) var(--tw-backdrop-brightness) var(--tw-backdrop-contrast) var(--tw-backdrop-grayscale) var(--tw-backdrop-hue-rotate) var(--tw-backdrop-invert) var(--tw-backdrop-opacity) var(--tw-backdrop-saturate) var(--tw-backdrop-sepia);backdrop-filter:var(--tw-backdrop-blur) var(--tw-backdrop-brightness) var(--tw-backdrop-contrast) var(--tw-backdrop-grayscale) var(--tw-backdrop-hue-rotate) var(--tw-backdrop-invert) var(--tw-backdrop-opacity) var(--tw-backdrop-saturate) var(--tw-backdrop-sepia)}.transition{transition-property:color, background-color, border-color, fill, stroke, opacity, box-shadow, transform, filter, -webkit-text-decoration-color, -webkit-backdrop-filter;transition-property:color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter;transition-property:color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter, -webkit-text-decoration-color, -webkit-backdrop-filter;transition-timing-function:cubic-bezier(0.4, 0, 0.2, 1);transition-duration:150ms}.transition-all{transition-property:all;transition-timing-function:cubic-bezier(0.4, 0, 0.2, 1);transition-duration:150ms}.selection\:bg-sage-600 *::selection{--tw-bg-opacity:1;background-color:rgb(110 123 82 / var(--tw-bg-opacity, 1))}.selection\:text-cream *::selection{--tw-text-opacity:1;color:rgb(244 241 234 / var(--tw-text-opacity, 1))}.selection\:bg-sage-600::selection{--tw-bg-opacity:1;background-color:rgb(110 123 82 / var(--tw-bg-opacity, 1))}.selection\:text-cream::selection{--tw-text-opacity:1;color:rgb(244 241 234 / var(--tw-text-opacity, 1))}.hover\:bg-amber-400:hover{--tw-bg-opacity:1;background-color:rgb(251 191 36 / var(--tw-bg-opacity, 1))}.hover\:bg-red-700:hover{--tw-bg-opacity:1;background-color:rgb(185 28 28 / var(--tw-bg-opacity, 1))}.hover\:bg-sage-200:hover{--tw-bg-opacity:1;background-color:rgb(220 226 203 / var(--tw-bg-opacity, 1))}.hover\:bg-sage-300:hover{--tw-bg-opacity:1;background-color:rgb(202 211 178 / var(--tw-bg-opacity, 1))}.hover\:bg-sage-700:hover{--tw-bg-opacity:1;background-color:rgb(85 96 63 / var(--tw-bg-opacity, 1))}.hover\:bg-sage-800:hover{--tw-bg-opacity:1;background-color:rgb(55 65 42 / var(--tw-bg-opacity, 1))}.hover\:text-cream:hover{--tw-text-opacity:1;color:rgb(244 241 234 / var(--tw-text-opacity, 1))}.hover\:text-sage-600:hover{--tw-text-opacity:1;color:rgb(110 123 82 / var(--tw-text-opacity, 1))}.focus\:not-sr-only:focus{position:static;width:auto;height:auto;padding:0;margin:0;overflow:visible;clip:auto;white-space:normal}.focus\:fixed:focus{position:fixed}.focus\:right-3:focus{right:0.75rem}.focus\:top-3:focus{top:0.75rem}.focus\:z-50:focus{z-index:50}.focus\:rounded-xl:focus{border-radius:0.75rem}.focus\:border-sage-900:focus{--tw-border-opacity:1;border-color:rgb(30 36 24 / var(--tw-border-opacity, 1))}.focus\:bg-sage-950:focus{--tw-bg-opacity:1;background-color:rgb(18 22 14 / var(--tw-bg-opacity, 1))}.focus\:px-4:focus{padding-left:1rem;padding-right:1rem}.focus\:py-2\.5:focus{padding-top:0.625rem;padding-bottom:0.625rem}.focus\:font-bold:focus{font-weight:700}.focus\:text-cream:focus{--tw-text-opacity:1;color:rgb(244 241 234 / var(--tw-text-opacity, 1))}.focus\:shadow-xl:focus{--tw-shadow:0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);--tw-shadow-colored:0 20px 25px -5px var(--tw-shadow-color), 0 8px 10px -6px var(--tw-shadow-color);box-shadow:var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow)}.focus\:outline-none:focus{outline:2px solid transparent;outline-offset:2px}.active\:scale-95:active{--tw-scale-x:.95;--tw-scale-y:.95;transform:translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y))}.active\:scale-\[0\.99\]:active{--tw-scale-x:0.99;--tw-scale-y:0.99;transform:translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y))}@media (min-width: 640px){.sm\:bottom-auto{bottom:auto}.sm\:left-4{left:1rem}.sm\:left-6{left:1.5rem}.sm\:right-auto{right:auto}.sm\:top-2\.5{top:0.625rem}.sm\:top-4{top:1rem}.sm\:mx-0{margin-left:0px;margin-right:0px}.sm\:mb-10{margin-bottom:2.5rem}.sm\:mb-4{margin-bottom:1rem}.sm\:mb-5{margin-bottom:1.25rem}.sm\:mb-8{margin-bottom:2rem}.sm\:flex{display:flex}.sm\:h-10{height:2.5rem}.sm\:h-14{height:3.5rem}.sm\:h-6{height:1.5rem}.sm\:w-10{width:2.5rem}.sm\:w-14{width:3.5rem}.sm\:w-6{width:1.5rem}.sm\:w-auto{width:auto}.sm\:translate-x-0{--tw-translate-x:0px;transform:translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y))}.sm\:flex-row{flex-direction:row}.sm\:flex-wrap{flex-wrap:wrap}.sm\:items-center{align-items:center}.sm\:justify-start{justify-content:flex-start}.sm\:gap-2{gap:0.5rem}.sm\:gap-3{gap:0.75rem}.sm\:gap-4{gap:1rem}.sm\:gap-6{gap:1.5rem}.sm\:gap-7{gap:1.75rem}.sm\:rounded-2xl{border-radius:1rem}.sm\:rounded-none{border-radius:0px}.sm\:border-2{border-width:2px}.sm\:bg-sage-800\/10{background-color:rgb(55 65 42 / 0.1)}.sm\:bg-transparent{background-color:transparent}.sm\:p-0{padding:0px}.sm\:p-4{padding:1rem}.sm\:p-5{padding:1.25rem}.sm\:p-6{padding:1.5rem}.sm\:px-0{padding-left:0px;padding-right:0px}.sm\:px-4{padding-left:1rem;padding-right:1rem}.sm\:px-5{padding-left:1.25rem;padding-right:1.25rem}.sm\:px-8{padding-left:2rem;padding-right:2rem}.sm\:py-12{padding-top:3rem;padding-bottom:3rem}.sm\:py-2\.5{padding-top:0.625rem;padding-bottom:0.625rem}.sm\:py-3\.5{padding-top:0.875rem;padding-bottom:0.875rem}.sm\:pb-0{padding-bottom:0px}.sm\:pb-28{padding-bottom:7rem}.sm\:pt-10{padding-top:2.5rem}.sm\:text-left{text-align:left}.sm\:text-right{text-align:right}.sm\:text-2xl{font-size:1.5rem;line-height:2rem}.sm\:text-5xl{font-size:3rem;line-height:1}.sm\:text-base{font-size:1rem;line-height:1.5rem}.sm\:text-lg{font-size:1.125rem;line-height:1.75rem}.sm\:text-sm{font-size:0.875rem;line-height:1.25rem}.sm\:text-xl{font-size:1.25rem;line-height:1.75rem}.sm\:text-xs{font-size:0.75rem;line-height:1rem}.sm\:text-sage-800{--tw-text-opacity:1;color:rgb(55 65 42 / var(--tw-text-opacity, 1))}.sm\:opacity-100{opacity:1}.sm\:backdrop-blur-none{--tw-backdrop-blur: ;-webkit-backdrop-filter:var(--tw-backdrop-blur) var(--tw-backdrop-brightness) var(--tw-backdrop-contrast) var(--tw-backdrop-grayscale) var(--tw-backdrop-hue-rotate) var(--tw-backdrop-invert) var(--tw-backdrop-opacity) var(--tw-backdrop-saturate) var(--tw-backdrop-sepia);backdrop-filter:var(--tw-backdrop-blur) var(--tw-backdrop-brightness) var(--tw-backdrop-contrast) var(--tw-backdrop-grayscale) var(--tw-backdrop-hue-rotate) var(--tw-backdrop-invert) var(--tw-backdrop-opacity) var(--tw-backdrop-saturate) var(--tw-backdrop-sepia)}}@media (min-width: 768px){.md\:col-span-2{grid-column:span 2 / span 2}.md\:grid-cols-2{grid-template-columns:repeat(2, minmax(0, 1fr))}.md\:grid-cols-3{grid-template-columns:repeat(3, minmax(0, 1fr))}.md\:pb-36{padding-bottom:9rem}.md\:text-6xl{font-size:3.75rem;line-height:1}}@media (min-width: 1024px){.lg\:order-1{order:1}.lg\:order-2{order:2}.lg\:w-72{width:18rem}.lg\:grid-cols-3{grid-template-columns:repeat(3, minmax(0, 1fr))}.lg\:flex-row{flex-direction:row}.lg\:items-center{align-items:center}}</style><style>*, ::before, ::after{--tw-border-spacing-x:0;--tw-border-spacing-y:0;--tw-translate-x:0;--tw-translate-y:0;--tw-rotate:0;--tw-skew-x:0;--tw-skew-y:0;--tw-scale-x:1;--tw-scale-y:1;--tw-pan-x: ;--tw-pan-y: ;--tw-pinch-zoom: ;--tw-scroll-snap-strictness:proximity;--tw-gradient-from-position: ;--tw-gradient-via-position: ;--tw-gradient-to-position: ;--tw-ordinal: ;--tw-slashed-zero: ;--tw-numeric-figure: ;--tw-numeric-spacing: ;--tw-numeric-fraction: ;--tw-ring-inset: ;--tw-ring-offset-width:0px;--tw-ring-offset-color:#fff;--tw-ring-color:rgb(59 130 246 / 0.5);--tw-ring-offset-shadow:0 0 #0000;--tw-ring-shadow:0 0 #0000;--tw-shadow:0 0 #0000;--tw-shadow-colored:0 0 #0000;--tw-blur: ;--tw-brightness: ;--tw-contrast: ;--tw-grayscale: ;--tw-hue-rotate: ;--tw-invert: ;--tw-saturate: ;--tw-sepia: ;--tw-drop-shadow: ;--tw-backdrop-blur: ;--tw-backdrop-brightness: ;--tw-backdrop-contrast: ;--tw-backdrop-grayscale: ;--tw-backdrop-hue-rotate: ;--tw-backdrop-invert: ;--tw-backdrop-opacity: ;--tw-backdrop-saturate: ;--tw-backdrop-sepia: ;--tw-contain-size: ;--tw-contain-layout: ;--tw-contain-paint: ;--tw-contain-style: }::backdrop{--tw-border-spacing-x:0;--tw-border-spacing-y:0;--tw-translate-x:0;--tw-translate-y:0;--tw-rotate:0;--tw-skew-x:0;--tw-skew-y:0;--tw-scale-x:1;--tw-scale-y:1;--tw-pan-x: ;--tw-pan-y: ;--tw-pinch-zoom: ;--tw-scroll-snap-strictness:proximity;--tw-gradient-from-position: ;--tw-gradient-via-position: ;--tw-gradient-to-position: ;--tw-ordinal: ;--tw-slashed-zero: ;--tw-numeric-figure: ;--tw-numeric-spacing: ;--tw-numeric-fraction: ;--tw-ring-inset: ;--tw-ring-offset-width:0px;--tw-ring-offset-color:#fff;--tw-ring-color:rgb(59 130 246 / 0.5);--tw-ring-offset-shadow:0 0 #0000;--tw-ring-shadow:0 0 #0000;--tw-shadow:0 0 #0000;--tw-shadow-colored:0 0 #0000;--tw-blur: ;--tw-brightness: ;--tw-contrast: ;--tw-grayscale: ;--tw-hue-rotate: ;--tw-invert: ;--tw-saturate: ;--tw-sepia: ;--tw-drop-shadow: ;--tw-backdrop-blur: ;--tw-backdrop-brightness: ;--tw-backdrop-contrast: ;--tw-backdrop-grayscale: ;--tw-backdrop-hue-rotate: ;--tw-backdrop-invert: ;--tw-backdrop-opacity: ;--tw-backdrop-saturate: ;--tw-backdrop-sepia: ;--tw-contain-size: ;--tw-contain-layout: ;--tw-contain-paint: ;--tw-contain-style: }/* ! tailwindcss v3.4.17 | MIT License | https://tailwindcss.com */*,::after,::before{box-sizing:border-box;border-width:0;border-style:solid;border-color:#e5e7eb}::after,::before{--tw-content:''}:host,html{line-height:1.5;-webkit-text-size-adjust:100%;-moz-tab-size:4;tab-size:4;font-family:Assistant, sans-serif;font-feature-settings:normal;font-variation-settings:normal;-webkit-tap-highlight-color:transparent}body{margin:0;line-height:inherit}hr{height:0;color:inherit;border-top-width:1px}abbr:where([title]){-webkit-text-decoration:underline dotted;text-decoration:underline dotted}h1,h2,h3,h4,h5,h6{font-size:inherit;font-weight:inherit}a{color:inherit;text-decoration:inherit}b,strong{font-weight:bolder}code,kbd,pre,samp{font-family:ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;font-feature-settings:normal;font-variation-settings:normal;font-size:1em}small{font-size:80%}sub,sup{font-size:75%;line-height:0;position:relative;vertical-align:baseline}sub{bottom:-.25em}sup{top:-.5em}table{text-indent:0;border-color:inherit;border-collapse:collapse}button,input,optgroup,select,textarea{font-family:inherit;font-feature-settings:inherit;font-variation-settings:inherit;font-size:100%;font-weight:inherit;line-height:inherit;letter-spacing:inherit;color:inherit;margin:0;padding:0}button,select{text-transform:none}button,input:where([type=button]),input:where([type=reset]),input:where([type=submit]){-webkit-appearance:button;background-color:transparent;background-image:none}:-moz-focusring{outline:auto}:-moz-ui-invalid{box-shadow:none}progress{vertical-align:baseline}::-webkit-inner-spin-button,::-webkit-outer-spin-button{height:auto}[type=search]{-webkit-appearance:textfield;outline-offset:-2px}::-webkit-search-decoration{-webkit-appearance:none}::-webkit-file-upload-button{-webkit-appearance:button;font:inherit}summary{display:list-item}blockquote,dd,dl,figure,h1,h2,h3,h4,h5,h6,hr,p,pre{margin:0}fieldset{margin:0;padding:0}legend{padding:0}menu,ol,ul{list-style:none;margin:0;padding:0}dialog{padding:0}textarea{resize:vertical}input::placeholder,textarea::placeholder{opacity:1;color:#9ca3af}[role=button],button{cursor:pointer}:disabled{cursor:default}audio,canvas,embed,iframe,img,object,svg,video{display:block;vertical-align:middle}img,video{max-width:100%;height:auto}[hidden]:where(:not([hidden=until-found])){display:none}.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0, 0, 0, 0);white-space:nowrap;border-width:0}.pointer-events-none{pointer-events:none}.fixed{position:fixed}.absolute{position:absolute}.relative{position:relative}.sticky{position:sticky}.inset-0{inset:0px}.bottom-3{bottom:0.75rem}.bottom-4{bottom:1rem}.left-1\/2{left:50%}.left-3\.5{left:0.875rem}.left-4{left:1rem}.right-4{right:1rem}.top-0{top:0px}.top-3{top:0.75rem}.z-10{z-index:10}.z-20{z-index:20}.z-30{z-index:30}.z-40{z-index:40}.z-50{z-index:50}.order-1{order:1}.order-2{order:2}.-mx-1{margin-left:-0.25rem;margin-right:-0.25rem}.mx-auto{margin-left:auto;margin-right:auto}.mb-0\.5{margin-bottom:0.125rem}.mb-1{margin-bottom:0.25rem}.mb-2{margin-bottom:0.5rem}.mb-3{margin-bottom:0.75rem}.mb-4{margin-bottom:1rem}.mb-5{margin-bottom:1.25rem}.mb-6{margin-bottom:1.5rem}.mb-7{margin-bottom:1.75rem}.mb-8{margin-bottom:2rem}.ml-auto{margin-left:auto}.mt-1{margin-top:0.25rem}.mt-12{margin-top:3rem}.block{display:block}.flex{display:flex}.inline-flex{display:inline-flex}.grid{display:grid}.hidden{display:none}.h-1\.5{height:0.375rem}.h-12{height:3rem}.h-14{height:3.5rem}.h-2{height:0.5rem}.h-4{height:1rem}.h-5{height:1.25rem}.h-6{height:1.5rem}.h-8{height:2rem}.h-9{height:2.25rem}.h-full{height:100%}.max-h-\[88vh\]{max-height:88vh}.max-h-\[90vh\]{max-height:90vh}.min-h-\[32px\]{min-height:32px}.min-h-\[42px\]{min-height:42px}.min-h-\[44px\]{min-height:44px}.min-h-\[48px\]{min-height:48px}.min-h-screen{min-height:100vh}.w-1\.5{width:0.375rem}.w-12{width:3rem}.w-14{width:3.5rem}.w-2{width:0.5rem}.w-4{width:1rem}.w-5{width:1.25rem}.w-6{width:1.5rem}.w-8{width:2rem}.w-9{width:2.25rem}.w-fit{width:-moz-fit-content;width:fit-content}.w-full{width:100%}.w-px{width:1px}.min-w-0{min-width:0px}.min-w-\[42px\]{min-width:42px}.max-w-2xl{max-width:42rem}.max-w-7xl{max-width:80rem}.max-w-lg{max-width:32rem}.max-w-md{max-width:28rem}.max-w-sm{max-width:24rem}.flex-1{flex:1 1 0%}.shrink-0{flex-shrink:0}.flex-grow{flex-grow:1}.-translate-x-1\/2{--tw-translate-x:-50%;transform:translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y))}@keyframes ping{75%, 100%{transform:scale(2);opacity:0}}.animate-ping{animation:ping 1s cubic-bezier(0, 0, 0.2, 1) infinite}.cursor-pointer{cursor:pointer}.grid-cols-1{grid-template-columns:repeat(1, minmax(0, 1fr))}.flex-col{flex-direction:column}.flex-col-reverse{flex-direction:column-reverse}.flex-wrap{flex-wrap:wrap}.items-start{align-items:flex-start}.items-end{align-items:flex-end}.items-center{align-items:center}.items-stretch{align-items:stretch}.justify-end{justify-content:flex-end}.justify-center{justify-content:center}.justify-between{justify-content:space-between}.justify-around{justify-content:space-around}.gap-1{gap:0.25rem}.gap-1\.5{gap:0.375rem}.gap-2{gap:0.5rem}.gap-2\.5{gap:0.625rem}.gap-3{gap:0.75rem}.gap-3\.5{gap:0.875rem}.gap-4{gap:1rem}.gap-5{gap:1.25rem}.gap-6{gap:1.5rem}.space-y-4 > :not([hidden]) ~ :not([hidden]){--tw-space-y-reverse:0;margin-top:calc(1rem * calc(1 - var(--tw-space-y-reverse)));margin-bottom:calc(1rem * var(--tw-space-y-reverse))}.overflow-hidden{overflow:hidden}.overflow-x-auto{overflow-x:auto}.overflow-y-auto{overflow-y:auto}.truncate{overflow:hidden;text-overflow:ellipsis;white-space:nowrap}.whitespace-nowrap{white-space:nowrap}.whitespace-pre-line{white-space:pre-line}.rounded{border-radius:0.25rem}.rounded-2xl{border-radius:1rem}.rounded-full{border-radius:9999px}.rounded-lg{border-radius:0.5rem}.rounded-md{border-radius:0.375rem}.rounded-xl{border-radius:0.75rem}.rounded-t-3xl{border-top-left-radius:1.5rem;border-top-right-radius:1.5rem}.border{border-width:1px}.border-2{border-width:2px}.border-b{border-bottom-width:1px}.border-b-2{border-bottom-width:2px}.border-b-4{border-bottom-width:4px}.border-t{border-top-width:1px}.border-t-2{border-top-width:2px}.border-t-4{border-top-width:4px}.border-dashed{border-style:dashed}.border-sage-300{--tw-border-opacity:1;border-color:rgb(202 211 178 / var(--tw-border-opacity, 1))}.border-sage-400{--tw-border-opacity:1;border-color:rgb(179 192 149 / var(--tw-border-opacity, 1))}.border-sage-400\/30{border-color:rgb(179 192 149 / 0.3)}.border-sage-400\/40{border-color:rgb(179 192 149 / 0.4)}.border-sage-400\/50{border-color:rgb(179 192 149 / 0.5)}.border-sage-500{--tw-border-opacity:1;border-color:rgb(139 153 108 / var(--tw-border-opacity, 1))}.border-sage-500\/30{border-color:rgb(139 153 108 / 0.3)}.border-sage-500\/60{border-color:rgb(139 153 108 / 0.6)}.border-sage-600{--tw-border-opacity:1;border-color:rgb(110 123 82 / var(--tw-border-opacity, 1))}.border-sage-600\/30{border-color:rgb(110 123 82 / 0.3)}.border-sage-600\/40{border-color:rgb(110 123 82 / 0.4)}.border-sage-700{--tw-border-opacity:1;border-color:rgb(85 96 63 / var(--tw-border-opacity, 1))}.border-sage-800{--tw-border-opacity:1;border-color:rgb(55 65 42 / var(--tw-border-opacity, 1))}.border-sage-800\/20{border-color:rgb(55 65 42 / 0.2)}.border-sage-800\/25{border-color:rgb(55 65 42 / 0.25)}.border-sage-800\/30{border-color:rgb(55 65 42 / 0.3)}.border-sage-800\/40{border-color:rgb(55 65 42 / 0.4)}.border-sage-900{--tw-border-opacity:1;border-color:rgb(30 36 24 / var(--tw-border-opacity, 1))}.bg-amber-500{--tw-bg-opacity:1;background-color:rgb(245 158 11 / var(--tw-bg-opacity, 1))}.bg-cream{--tw-bg-opacity:1;background-color:rgb(244 241 234 / var(--tw-bg-opacity, 1))}.bg-cream\/60{background-color:rgb(244 241 234 / 0.6)}.bg-cream\/80{background-color:rgb(244 241 234 / 0.8)}.bg-cream\/85{background-color:rgb(244 241 234 / 0.85)}.bg-cream\/90{background-color:rgb(244 241 234 / 0.9)}.bg-cream\/95{background-color:rgb(244 241 234 / 0.95)}.bg-green-400{--tw-bg-opacity:1;background-color:rgb(74 222 128 / var(--tw-bg-opacity, 1))}.bg-red-800{--tw-bg-opacity:1;background-color:rgb(153 27 27 / var(--tw-bg-opacity, 1))}.bg-sage-100{--tw-bg-opacity:1;background-color:rgb(234 238 224 / var(--tw-bg-opacity, 1))}.bg-sage-100\/90{background-color:rgb(234 238 224 / 0.9)}.bg-sage-200\/50{background-color:rgb(220 226 203 / 0.5)}.bg-sage-200\/60{background-color:rgb(220 226 203 / 0.6)}.bg-sage-200\/70{background-color:rgb(220 226 203 / 0.7)}.bg-sage-200\/80{background-color:rgb(220 226 203 / 0.8)}.bg-sage-200\/90{background-color:rgb(220 226 203 / 0.9)}.bg-sage-300{--tw-bg-opacity:1;background-color:rgb(202 211 178 / var(--tw-bg-opacity, 1))}.bg-sage-300\/80{background-color:rgb(202 211 178 / 0.8)}.bg-sage-400{--tw-bg-opacity:1;background-color:rgb(179 192 149 / var(--tw-bg-opacity, 1))}.bg-sage-500\/40{background-color:rgb(139 153 108 / 0.4)}.bg-sage-700{--tw-bg-opacity:1;background-color:rgb(85 96 63 / var(--tw-bg-opacity, 1))}.bg-sage-800{--tw-bg-opacity:1;background-color:rgb(55 65 42 / var(--tw-bg-opacity, 1))}.bg-sage-800\/70{background-color:rgb(55 65 42 / 0.7)}.bg-sage-900{--tw-bg-opacity:1;background-color:rgb(30 36 24 / var(--tw-bg-opacity, 1))}.bg-sage-950{--tw-bg-opacity:1;background-color:rgb(18 22 14 / var(--tw-bg-opacity, 1))}.bg-sage-950\/75{background-color:rgb(18 22 14 / 0.75)}.p-0{padding:0px}.p-2{padding:0.5rem}.p-2\.5{padding:0.625rem}.p-3{padding:0.75rem}.p-3\.5{padding:0.875rem}.p-4{padding:1rem}.p-5{padding:1.25rem}.p-6{padding:1.5rem}.px-1{padding-left:0.25rem;padding-right:0.25rem}.px-2\.5{padding-left:0.625rem;padding-right:0.625rem}.px-3{padding-left:0.75rem;padding-right:0.75rem}.px-3\.5{padding-left:0.875rem;padding-right:0.875rem}.px-4{padding-left:1rem;padding-right:1rem}.px-5{padding-left:1.25rem;padding-right:1.25rem}.px-6{padding-left:1.5rem;padding-right:1.5rem}.py-0\.5{padding-top:0.125rem;padding-bottom:0.125rem}.py-1{padding-top:0.25rem;padding-bottom:0.25rem}.py-1\.5{padding-top:0.375rem;padding-bottom:0.375rem}.py-10{padding-top:2.5rem;padding-bottom:2.5rem}.py-16{padding-top:4rem;padding-bottom:4rem}.py-2{padding-top:0.5rem;padding-bottom:0.5rem}.py-2\.5{padding-top:0.625rem;padding-bottom:0.625rem}.py-3{padding-top:0.75rem;padding-bottom:0.75rem}.py-3\.5{padding-top:0.875rem;padding-bottom:0.875rem}.py-8{padding-top:2rem;padding-bottom:2rem}.pb-1{padding-bottom:0.25rem}.pb-24{padding-bottom:6rem}.pb-3{padding-bottom:0.75rem}.pb-4{padding-bottom:1rem}.pb-6{padding-bottom:1.5rem}.pl-1{padding-left:0.25rem}.pl-10{padding-left:2.5rem}.pr-4{padding-right:1rem}.pt-3{padding-top:0.75rem}.pt-4{padding-top:1rem}.pt-6{padding-top:1.5rem}.text-left{text-align:left}.text-center{text-align:center}.text-right{text-align:right}.font-serif{font-family:Frank Ruhl Libre, serif}.text-2xl{font-size:1.5rem;line-height:2rem}.text-3xl{font-size:1.875rem;line-height:2.25rem}.text-\[11px\]{font-size:11px}.text-base{font-size:1rem;line-height:1.5rem}.text-lg{font-size:1.125rem;line-height:1.75rem}.text-sm{font-size:0.875rem;line-height:1.25rem}.text-xl{font-size:1.25rem;line-height:1.75rem}.text-xs{font-size:0.75rem;line-height:1rem}.font-black{font-weight:900}.font-bold{font-weight:700}.font-extrabold{font-weight:800}.font-medium{font-weight:500}.font-semibold{font-weight:600}.leading-none{line-height:1}.leading-relaxed{line-height:1.625}.leading-snug{line-height:1.375}.leading-tight{line-height:1.25}.tracking-tight{letter-spacing:-0.025em}.tracking-widest{letter-spacing:0.1em}.text-cream{--tw-text-opacity:1;color:rgb(244 241 234 / var(--tw-text-opacity, 1))}.text-red-700{--tw-text-opacity:1;color:rgb(185 28 28 / var(--tw-text-opacity, 1))}.text-sage-100{--tw-text-opacity:1;color:rgb(234 238 224 / var(--tw-text-opacity, 1))}.text-sage-200{--tw-text-opacity:1;color:rgb(220 226 203 / var(--tw-text-opacity, 1))}.text-sage-300{--tw-text-opacity:1;color:rgb(202 211 178 / var(--tw-text-opacity, 1))}.text-sage-400{--tw-text-opacity:1;color:rgb(179 192 149 / var(--tw-text-opacity, 1))}.text-sage-700{--tw-text-opacity:1;color:rgb(85 96 63 / var(--tw-text-opacity, 1))}.text-sage-800{--tw-text-opacity:1;color:rgb(55 65 42 / var(--tw-text-opacity, 1))}.text-sage-900{--tw-text-opacity:1;color:rgb(30 36 24 / var(--tw-text-opacity, 1))}.text-sage-950{--tw-text-opacity:1;color:rgb(18 22 14 / var(--tw-text-opacity, 1))}.underline{-webkit-text-decoration-line:underline;text-decoration-line:underline}.placeholder-sage-700::placeholder{--tw-placeholder-opacity:1;color:rgb(85 96 63 / var(--tw-placeholder-opacity, 1))}.opacity-30{opacity:0.3}.opacity-45{opacity:0.45}.mix-blend-multiply{mix-blend-mode:multiply}.shadow{--tw-shadow:0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1);--tw-shadow-colored:0 1px 3px 0 var(--tw-shadow-color), 0 1px 2px -1px var(--tw-shadow-color);box-shadow:var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow)}.shadow-2xl{--tw-shadow:0 25px 50px -12px rgb(0 0 0 / 0.25);--tw-shadow-colored:0 25px 50px -12px var(--tw-shadow-color);box-shadow:var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow)}.shadow-lg{--tw-shadow:0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);--tw-shadow-colored:0 10px 15px -3px var(--tw-shadow-color), 0 4px 6px -4px var(--tw-shadow-color);box-shadow:var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow)}.shadow-md{--tw-shadow:0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);--tw-shadow-colored:0 4px 6px -1px var(--tw-shadow-color), 0 2px 4px -2px var(--tw-shadow-color);box-shadow:var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow)}.shadow-sm{--tw-shadow:0 1px 2px 0 rgb(0 0 0 / 0.05);--tw-shadow-colored:0 1px 2px 0 var(--tw-shadow-color);box-shadow:var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow)}.backdrop-blur{--tw-backdrop-blur:blur(8px);-webkit-backdrop-filter:var(--tw-backdrop-blur) var(--tw-backdrop-brightness) var(--tw-backdrop-contrast) var(--tw-backdrop-grayscale) var(--tw-backdrop-hue-rotate) var(--tw-backdrop-invert) var(--tw-backdrop-opacity) var(--tw-backdrop-saturate) var(--tw-backdrop-sepia);backdrop-filter:var(--tw-backdrop-blur) var(--tw-backdrop-brightness) var(--tw-backdrop-contrast) var(--tw-backdrop-grayscale) var(--tw-backdrop-hue-rotate) var(--tw-backdrop-invert) var(--tw-backdrop-opacity) var(--tw-backdrop-saturate) var(--tw-backdrop-sepia)}.backdrop-blur-\[2px\]{--tw-backdrop-blur:blur(2px);-webkit-backdrop-filter:var(--tw-backdrop-blur) var(--tw-backdrop-brightness) var(--tw-backdrop-contrast) var(--tw-backdrop-grayscale) var(--tw-backdrop-hue-rotate) var(--tw-backdrop-invert) var(--tw-backdrop-opacity) var(--tw-backdrop-saturate) var(--tw-backdrop-sepia);backdrop-filter:var(--tw-backdrop-blur) var(--tw-backdrop-brightness) var(--tw-backdrop-contrast) var(--tw-backdrop-grayscale) var(--tw-backdrop-hue-rotate) var(--tw-backdrop-invert) var(--tw-backdrop-opacity) var(--tw-backdrop-saturate) var(--tw-backdrop-sepia)}.backdrop-blur-md{--tw-backdrop-blur:blur(12px);-webkit-backdrop-filter:var(--tw-backdrop-blur) var(--tw-backdrop-brightness) var(--tw-backdrop-contrast) var(--tw-backdrop-grayscale) var(--tw-backdrop-hue-rotate) var(--tw-backdrop-invert) var(--tw-backdrop-opacity) var(--tw-backdrop-saturate) var(--tw-backdrop-sepia);backdrop-filter:var(--tw-backdrop-blur) var(--tw-backdrop-brightness) var(--tw-backdrop-contrast) var(--tw-backdrop-grayscale) var(--tw-backdrop-hue-rotate) var(--tw-backdrop-invert) var(--tw-backdrop-opacity) var(--tw-backdrop-saturate) var(--tw-backdrop-sepia)}.backdrop-blur-sm{--tw-backdrop-blur:blur(4px);-webkit-backdrop-filter:var(--tw-backdrop-blur) var(--tw-backdrop-brightness) var(--tw-backdrop-contrast) var(--tw-backdrop-grayscale) var(--tw-backdrop-hue-rotate) var(--tw-backdrop-invert) var(--tw-backdrop-opacity) var(--tw-backdrop-saturate) var(--tw-backdrop-sepia);backdrop-filter:var(--tw-backdrop-blur) var(--tw-backdrop-brightness) var(--tw-backdrop-contrast) var(--tw-backdrop-grayscale) var(--tw-backdrop-hue-rotate) var(--tw-backdrop-invert) var(--tw-backdrop-opacity) var(--tw-backdrop-saturate) var(--tw-backdrop-sepia)}.transition{transition-property:color, background-color, border-color, fill, stroke, opacity, box-shadow, transform, filter, -webkit-text-decoration-color, -webkit-backdrop-filter;transition-property:color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter;transition-property:color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter, -webkit-text-decoration-color, -webkit-backdrop-filter;transition-timing-function:cubic-bezier(0.4, 0, 0.2, 1);transition-duration:150ms}.transition-all{transition-property:all;transition-timing-function:cubic-bezier(0.4, 0, 0.2, 1);transition-duration:150ms}.selection\:bg-sage-600 *::selection{--tw-bg-opacity:1;background-color:rgb(110 123 82 / var(--tw-bg-opacity, 1))}.selection\:text-cream *::selection{--tw-text-opacity:1;color:rgb(244 241 234 / var(--tw-text-opacity, 1))}.selection\:bg-sage-600::selection{--tw-bg-opacity:1;background-color:rgb(110 123 82 / var(--tw-bg-opacity, 1))}.selection\:text-cream::selection{--tw-text-opacity:1;color:rgb(244 241 234 / var(--tw-text-opacity, 1))}.hover\:bg-amber-400:hover{--tw-bg-opacity:1;background-color:rgb(251 191 36 / var(--tw-bg-opacity, 1))}.hover\:bg-red-700:hover{--tw-bg-opacity:1;background-color:rgb(185 28 28 / var(--tw-bg-opacity, 1))}.hover\:bg-sage-200:hover{--tw-bg-opacity:1;background-color:rgb(220 226 203 / var(--tw-bg-opacity, 1))}.hover\:bg-sage-300:hover{--tw-bg-opacity:1;background-color:rgb(202 211 178 / var(--tw-bg-opacity, 1))}.hover\:bg-sage-700:hover{--tw-bg-opacity:1;background-color:rgb(85 96 63 / var(--tw-bg-opacity, 1))}.hover\:bg-sage-800:hover{--tw-bg-opacity:1;background-color:rgb(55 65 42 / var(--tw-bg-opacity, 1))}.hover\:text-cream:hover{--tw-text-opacity:1;color:rgb(244 241 234 / var(--tw-text-opacity, 1))}.hover\:text-sage-600:hover{--tw-text-opacity:1;color:rgb(110 123 82 / var(--tw-text-opacity, 1))}.focus\:not-sr-only:focus{position:static;width:auto;height:auto;padding:0;margin:0;overflow:visible;clip:auto;white-space:normal}.focus\:fixed:focus{position:fixed}.focus\:right-3:focus{right:0.75rem}.focus\:top-3:focus{top:0.75rem}.focus\:z-50:focus{z-index:50}.focus\:rounded-xl:focus{border-radius:0.75rem}.focus\:border-sage-900:focus{--tw-border-opacity:1;border-color:rgb(30 36 24 / var(--tw-border-opacity, 1))}.focus\:bg-sage-950:focus{--tw-bg-opacity:1;background-color:rgb(18 22 14 / var(--tw-bg-opacity, 1))}.focus\:px-4:focus{padding-left:1rem;padding-right:1rem}.focus\:py-2\.5:focus{padding-top:0.625rem;padding-bottom:0.625rem}.focus\:font-bold:focus{font-weight:700}.focus\:text-cream:focus{--tw-text-opacity:1;color:rgb(244 241 234 / var(--tw-text-opacity, 1))}.focus\:shadow-xl:focus{--tw-shadow:0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);--tw-shadow-colored:0 20px 25px -5px var(--tw-shadow-color), 0 8px 10px -6px var(--tw-shadow-color);box-shadow:var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow)}.focus\:outline-none:focus{outline:2px solid transparent;outline-offset:2px}.active\:scale-95:active{--tw-scale-x:.95;--tw-scale-y:.95;transform:translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y))}.active\:scale-\[0\.99\]:active{--tw-scale-x:0.99;--tw-scale-y:0.99;transform:translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y))}@media (min-width: 640px){.sm\:bottom-auto{bottom:auto}.sm\:left-4{left:1rem}.sm\:left-6{left:1.5rem}.sm\:right-auto{right:auto}.sm\:top-2\.5{top:0.625rem}.sm\:top-4{top:1rem}.sm\:mx-0{margin-left:0px;margin-right:0px}.sm\:mb-10{margin-bottom:2.5rem}.sm\:mb-4{margin-bottom:1rem}.sm\:mb-5{margin-bottom:1.25rem}.sm\:mb-8{margin-bottom:2rem}.sm\:flex{display:flex}.sm\:h-10{height:2.5rem}.sm\:h-14{height:3.5rem}.sm\:h-6{height:1.5rem}.sm\:w-10{width:2.5rem}.sm\:w-14{width:3.5rem}.sm\:w-6{width:1.5rem}.sm\:w-auto{width:auto}.sm\:translate-x-0{--tw-translate-x:0px;transform:translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y))}.sm\:flex-row{flex-direction:row}.sm\:flex-wrap{flex-wrap:wrap}.sm\:items-center{align-items:center}.sm\:justify-start{justify-content:flex-start}.sm\:gap-2{gap:0.5rem}.sm\:gap-3{gap:0.75rem}.sm\:gap-4{gap:1rem}.sm\:gap-6{gap:1.5rem}.sm\:gap-7{gap:1.75rem}.sm\:rounded-2xl{border-radius:1rem}.sm\:rounded-none{border-radius:0px}.sm\:border-2{border-width:2px}.sm\:bg-sage-800\/10{background-color:rgb(55 65 42 / 0.1)}.sm\:bg-transparent{background-color:transparent}.sm\:p-0{padding:0px}.sm\:p-4{padding:1rem}.sm\:p-5{padding:1.25rem}.sm\:p-6{padding:1.5rem}.sm\:px-0{padding-left:0px;padding-right:0px}.sm\:px-4{padding-left:1rem;padding-right:1rem}.sm\:px-5{padding-left:1.25rem;padding-right:1.25rem}.sm\:px-8{padding-left:2rem;padding-right:2rem}.sm\:py-12{padding-top:3rem;padding-bottom:3rem}.sm\:py-2\.5{padding-top:0.625rem;padding-bottom:0.625rem}.sm\:py-3\.5{padding-top:0.875rem;padding-bottom:0.875rem}.sm\:pb-0{padding-bottom:0px}.sm\:pb-28{padding-bottom:7rem}.sm\:pt-10{padding-top:2.5rem}.sm\:text-left{text-align:left}.sm\:text-right{text-align:right}.sm\:text-2xl{font-size:1.5rem;line-height:2rem}.sm\:text-5xl{font-size:3rem;line-height:1}.sm\:text-base{font-size:1rem;line-height:1.5rem}.sm\:text-lg{font-size:1.125rem;line-height:1.75rem}.sm\:text-sm{font-size:0.875rem;line-height:1.25rem}.sm\:text-xl{font-size:1.25rem;line-height:1.75rem}.sm\:text-xs{font-size:0.75rem;line-height:1rem}.sm\:text-sage-800{--tw-text-opacity:1;color:rgb(55 65 42 / var(--tw-text-opacity, 1))}.sm\:opacity-100{opacity:1}.sm\:backdrop-blur-none{--tw-backdrop-blur: ;-webkit-backdrop-filter:var(--tw-backdrop-blur) var(--tw-backdrop-brightness) var(--tw-backdrop-contrast) var(--tw-backdrop-grayscale) var(--tw-backdrop-hue-rotate) var(--tw-backdrop-invert) var(--tw-backdrop-opacity) var(--tw-backdrop-saturate) var(--tw-backdrop-sepia);backdrop-filter:var(--tw-backdrop-blur) var(--tw-backdrop-brightness) var(--tw-backdrop-contrast) var(--tw-backdrop-grayscale) var(--tw-backdrop-hue-rotate) var(--tw-backdrop-invert) var(--tw-backdrop-opacity) var(--tw-backdrop-saturate) var(--tw-backdrop-sepia)}}@media (min-width: 768px){.md\:col-span-2{grid-column:span 2 / span 2}.md\:grid-cols-2{grid-template-columns:repeat(2, minmax(0, 1fr))}.md\:grid-cols-3{grid-template-columns:repeat(3, minmax(0, 1fr))}.md\:pb-36{padding-bottom:9rem}.md\:text-6xl{font-size:3.75rem;line-height:1}}@media (min-width: 1024px){.lg\:order-1{order:1}.lg\:order-2{order:2}.lg\:w-72{width:18rem}.lg\:grid-cols-3{grid-template-columns:repeat(3, minmax(0, 1fr))}.lg\:flex-row{flex-direction:row}.lg\:items-center{align-items:center}}</style></head>
+<body class="min-h-screen flex flex-col relative vintage-frame selection:bg-sage-600 selection:text-cream">
+
+    <!-- Skip to Content Link for Accessibility -->
+    <a href="#main-content" class="sr-only focus:not-sr-only focus:fixed focus:top-3 focus:right-3 focus:z-50 focus:bg-sage-950 focus:text-cream focus:px-4 focus:py-2.5 focus:rounded-xl focus:font-bold focus:shadow-xl">
+        דלג ישירות לתוכן
+    </a>
+
+    <!-- Global SVG Filters for Distress/Grunge Stamp Texture -->
+    <svg class="hidden" width="0" height="0">
+        <defs>
+            <filter id="grunge-stamp" x="-10%" y="-10%" width="120%" height="120%">
+                <feTurbulence type="fractalNoise" baseFrequency="0.65" numOctaves="3" result="noise"></feTurbulence>
+                <feColorMatrix type="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 8 -3.2" in="noise" result="speckles"></feColorMatrix>
+                <feComposite operator="out" in="SourceGraphic" in2="speckles"></feComposite>
+            </filter>
+        </defs>
+    </svg>
+
+    <!-- Full-page Paper Grain Overlay -->
+    <div class="fixed inset-0 pointer-events-none z-50 opacity-30 mix-blend-multiply" style="background-image: radial-gradient(#1e2418 0.55px, transparent 0.55px), radial-gradient(#55603f 0.55px, #dce2cb 0.55px); background-size: 24px 24px; background-position: 0 0, 12px 12px;"></div>
+
+    <!-- Top Navigation Bar -->
+    <header class="sticky top-0 z-40 bg-cream/95 backdrop-blur-md border-b-2 border-sage-500/30 px-3 sm:px-8 py-2.5 sm:py-3.5">
+        <div class="max-w-7xl mx-auto flex items-center justify-between gap-2 sm:gap-4">
+            <!-- Brand / Logo -->
+            <button type="button" aria-label="חזרה לראש העמוד" class="flex items-center gap-2.5 sm:gap-3 text-right cursor-pointer min-w-0 focus:outline-none" onclick="window.scrollTo({top: 0, behavior: 'smooth'})">
+                <div class="w-9 h-9 sm:w-10 sm:h-10 rounded-full bg-sage-800 text-cream flex items-center justify-center stamp-effect shadow-sm shrink-0">
+                    <svg class="w-5 h-5 sm:w-6 sm:h-6" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                        <path d="M12 2L9 5h6l-3-3zm-2 4v3h4V6h-4zm-1 4l-1.5 10h9L15 10H9zm-3 11v2h12v-2H6z"></path>
+                    </svg>
+                </div>
+                <div class="truncate">
+                    <span class="font-serif font-bold text-base sm:text-xl text-sage-900 tracking-tight block leading-tight truncate" id="nav-title">ארגז הכלים שלי אליכם</span>
+                    <span class="text-[11px] sm:text-xs text-sage-700 font-semibold block truncate">אתר הכלים והתכנים של <strong class="text-sage-950 font-extrabold">מורן קומרז</strong></span>
+                </div>
+            </button>
+
+            <!-- Mode Indicator & Admin Toggle -->
+            <div class="flex items-center gap-2 shrink-0">
+                <div id="admin-badge" class="sm:flex items-center gap-2 bg-sage-800 text-cream px-3 py-1 rounded-full text-xs font-bold shadow-sm">
+                    <span class="w-2 h-2 rounded-full bg-green-400 animate-ping"></span>
+                    <span>מצב ניהול פעיל</span>
+                </div>
+
+                <button id="toggle-mode-btn" onclick="handleModeToggle()" class="flex items-center gap-1.5 sm:gap-2 px-3 sm:px-4 py-2 min-h-[42px] rounded-xl text-xs sm:text-sm font-bold border-2 border-sage-800 text-sage-900 hover:bg-sage-800 hover:text-cream active:scale-95 transition-all">
+                    <svg class="w-4 h-4 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"></path>
+                    </svg>
+                    <span id="mode-btn-text">תצוגת אורח</span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- HERO SECTION -->
+    <section class="relative overflow-hidden sunburst-bg border-b-4 border-sage-900 pt-6 sm:pt-10 pb-24 sm:pb-28 md:pb-36 px-4 sm:px-8">
+        <div class="max-w-7xl mx-auto relative z-20">
+            <div class="max-w-2xl">
+                <!-- Subtitle Tag & Creator Credit -->
+                <div class="flex flex-wrap items-center gap-2 mb-4 sm:mb-5">
+                    <div class="inline-flex items-center gap-2 bg-sage-900 text-cream px-3.5 py-1.5 rounded-full text-xs sm:text-sm font-bold shadow-md border border-sage-700">
+                        <span class="w-2 h-2 rounded-full bg-sage-300"></span>
+                    </div>
+                    <div class="inline-flex items-center gap-2 bg-cream/80 sm:bg-sage-800/10 border border-sage-800/30 text-sage-900 px-3 py-1.5 rounded-full text-xs sm:text-sm font-bold">                    </div>
+                </div>
+
+                <!-- Main Editable Title -->
+                <h1 id="hero-title" class="font-serif text-3xl sm:text-5xl md:text-6xl font-black text-sage-950 leading-tight mb-3 sm:mb-4">ארגז הכלים שלי אליכם</h1>
+
+                <!-- Subtitle -->
+                <p id="hero-subtitle" class="text-base sm:text-xl text-sage-900 sm:text-sage-800 font-medium leading-relaxed mb-6 sm:mb-8 bg-cream/60 sm:bg-transparent p-3 sm:p-0 rounded-xl sm:rounded-none backdrop-blur-[2px] sm:backdrop-blur-none">ריכוז של כל האתרים, הכלים והתכנים המקצועיים שבניתי עבורכם – מורן קומרז. מגדלור מעשי שילווה אתכם גם אחרי שההרצאה מסתיימת – בחרו כלי או טיפ הדרכתי וצאו לדרך.</p>
+
+                <!-- Quick Stats & CTA -->
+                <div class="flex flex-col sm:flex-row items-stretch sm:items-center gap-3.5 sm:gap-4">
+                    <a href="#main-content" class="w-full sm:w-auto justify-center px-6 py-3.5 min-h-[48px] bg-sage-900 text-cream font-bold rounded-xl shadow-lg hover:bg-sage-800 active:scale-[0.99] transition flex items-center gap-2 text-center">
+                        <span>לכל התכנים והכלים של מורן</span>
+                        <svg class="w-5 h-5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"></path>
+                        </svg>
+                    </a>
+                    <div class="flex items-center justify-around sm:justify-start gap-4 sm:gap-6 px-4 sm:px-5 py-3 bg-cream/85 backdrop-blur-sm rounded-xl border border-sage-600/30 shadow-sm">
+                        <div class="text-center sm:text-right">
+                            <span id="stat-total" class="block text-xl sm:text-2xl font-black text-sage-900 leading-none">5</span>
+                            <span class="text-xs text-sage-800 font-bold">כלים ותכנים של מורן קומרז</span>
+                        </div>
+                        <div class="h-8 w-px bg-sage-500/40"></div>
+                        <div class="text-center sm:text-right">
+                            <span id="stat-sites" class="block text-xl sm:text-2xl font-black text-sage-900 leading-none">2</span>
+                            <span class="text-xs text-sage-800 font-bold">אתרים שבניתי</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Scenic Illustration Switcher -->
+        <div role="group" aria-label="בחירת איור אווירה" class="absolute bottom-3 left-1/2 -translate-x-1/2 sm:translate-x-0 sm:bottom-auto sm:top-4 sm:left-4 z-30 flex items-center gap-1 bg-cream/90 backdrop-blur px-2.5 py-1.5 rounded-xl border border-sage-600/40 text-xs font-bold text-sage-900 shadow-sm whitespace-nowrap">
+            <span class="pl-1">אווירה:</span>
+            <button type="button" onclick="setHeroScene('lighthouse')" id="scene-btn-lighthouse" class="px-2.5 py-1 min-h-[32px] rounded-lg bg-sage-800 text-cream transition">מגדלור</button>
+            <button type="button" onclick="setHeroScene('tree')" id="scene-btn-tree" class="px-2.5 py-1 min-h-[32px] rounded-lg hover:bg-sage-300 transition">עץ הידע</button>
+            <button type="button" onclick="setHeroScene('mountain')" id="scene-btn-mountain" class="px-2.5 py-1 min-h-[32px] rounded-lg hover:bg-sage-300 transition">פסגת היעד</button>
+        </div>
+
+        <!-- SVG SCENIC ARTWORK -->
+        <div class="absolute inset-0 pointer-events-none z-10 overflow-hidden opacity-45 sm:opacity-100" aria-hidden="true">
+            <svg id="scene-lighthouse" class="w-full h-full preserve-3d" viewBox="0 0 1440 500" preserveAspectRatio="xMidYMax slice">
+                <path d="M1120 110 C1120 90, 1150 90, 1155 70 C1165 40, 1210 40, 1220 70 C1240 65, 1255 85, 1245 105 L1100 105 Z" fill="#8b996c" opacity="0.65"></path>
+                <path d="M1230 190 C1230 175, 1250 175, 1260 155 C1270 130, 1310 130, 1320 155 C1335 155, 1345 170, 1340 185 L1215 185 Z" fill="#8b996c" opacity="0.75"></path>
+                <g transform="translate(0, 390)">
+                    <rect x="0" y="0" width="850" height="110" fill="#6e7b52" opacity="0.85"></rect>
+                    <polygon points="0,18 750,25 0,32" fill="#cad3b2" opacity="0.7"></polygon>
+                    <polygon points="0,45 650,52 0,60" fill="#cad3b2" opacity="0.65"></polygon>
+                    <polygon points="0,75 550,80 0,88" fill="#cad3b2" opacity="0.6"></polygon>
+                </g>
+                <path class="lighthouse-beam" d="M 185 210 L 780 120 A 190 190 0 0 1 760 285 Z" fill="#f4f1ea" opacity="0.65" stroke="#b3c095" stroke-width="1.5"></path>
+                <g transform="scale(-1, 1) translate(-1440, 0)">
+                    <path d="M 550 500 L 720 465 C 760 450, 790 440, 840 438 C 890 436, 940 410, 990 408 C 1040 406, 1070 385, 1100 365 C 1130 345, 1160 350, 1190 325 C 1220 300, 1250 305, 1275 305 L 1410 305 L 1430 500 Z" fill="#1e2418"></path>
+                    <polygon points="1285,308 1295,195 1335,195 1345,308" fill="#1e2418"></polygon>
+                    <rect x="1280" y="295" width="70" height="15" fill="#1e2418"></rect>
+                    <rect x="1290" y="188" width="50" height="8" rx="2" fill="#1e2418"></rect>
+                    <rect x="1297" y="165" width="36" height="23" fill="#1e2418"></rect>
+                    <rect x="1302" y="170" width="6" height="14" fill="#dce2cb"></rect>
+                    <rect x="1312" y="170" width="6" height="14" fill="#dce2cb"></rect>
+                    <rect x="1322" y="170" width="6" height="14" fill="#dce2cb"></rect>
+                    <path d="M 1293 165 Q 1315 142 1337 165 Z" fill="#1e2418"></path>
+                    <line x1="1315" y1="135" x2="1315" y2="155" stroke="#1e2418" stroke-width="3"></line>
+                </g>
+            </svg>
+            <svg id="scene-tree" class="w-full h-full hidden" viewBox="0 0 1440 500" preserveAspectRatio="xMidYMax slice">
+                <g transform="scale(-1, 1) translate(-1440, 0)">
+                    <path d="M 650 500 Q 1050 420 1440 415 L 1440 500 Z" fill="#1e2418"></path>
+                    <path d="M 1180 440 Q 1210 370 1195 310 Q 1150 260 1070 250 M 1195 310 Q 1230 240 1290 210 M 1200 340 Q 1260 300 1320 295 M 1185 280 Q 1140 200 1100 175 M 1210 270 Q 1220 190 1250 155" stroke="#1e2418" stroke-width="18" stroke-linecap="round" fill="none"></path>
+                    <path d="M 1165 445 L 1200 300 L 1225 440 Z" fill="#1e2418"></path>
+                </g>
+            </svg>
+            <svg id="scene-mountain" class="w-full h-full hidden" viewBox="0 0 1440 500" preserveAspectRatio="xMidYMax slice">
+                <g transform="scale(-1, 1) translate(-1440, 0)">
+                    <path d="M 850 250 Q 920 210 980 235 Q 1050 190 1140 230 Q 1210 215 1260 250 Z" fill="#b3c095" opacity="0.6"></path>
+                    <path d="M 420 500 L 510 465 L 590 460 L 670 420 L 750 415 L 860 350 L 940 305 L 1010 320 L 1090 270 L 1140 255 L 1190 210 L 1245 255 L 1310 315 L 1400 345 L 1430 500 Z" fill="#1e2418"></path>
+                    <line x1="1190" y1="215" x2="1190" y2="160" stroke="#1e2418" stroke-width="4"></line>
+                    <path d="M 1190 162 Q 1210 155 1230 165 L 1230 185 Q 1210 175 1190 182 Z" fill="#1e2418"></path>
+                </g>
+            </svg>
+        </div>
+    </section>
+
+    <!-- ADMIN PANEL -->
+    <section id="admin-panel" class="bg-sage-900 text-cream border-b-4 border-sage-700 py-8 px-4 sm:px-8 shadow-2xl relative z-30">
+        <div class="max-w-7xl mx-auto">
+            <div class="flex flex-wrap items-center justify-between gap-4 pb-6 mb-6 border-b border-sage-700">
+                <div class="flex items-center gap-3">
+                    <div class="p-2.5 bg-sage-700 rounded-xl">
+                        <svg class="w-6 h-6 text-sage-200" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"></path>
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path>
+                        </svg>
+                    </div>
+                    <div>
+                        <h2 class="text-2xl font-serif font-bold">אזור ניהול תוכן – מורן קומרז</h2>
+                        <p class="text-sm text-sage-300">הוסף אתרים, תכנים וטיפים הדרכתיים. לאחר ההוספה, לחץ על כפתור הפרסום לגיטהאב כדי לעדכן את כולם!</p>
+                    </div>
+                </div>
+
+                <!-- GitHub Publish & Backup Controls -->
+                <div class="flex flex-wrap items-center gap-2">
+                    <button onclick="downloadUpdatedWebsite()" class="px-4 py-2.5 bg-amber-500 hover:bg-amber-400 text-sage-950 font-black rounded-lg text-xs transition flex items-center gap-1.5 shadow-lg">
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"></path></svg>
+                        <span>פרסום שינויים לכולם (הורדת index.html מעודכן)</span>
+                    </button>
+                    <button onclick="openHeaderSettingsModal()" class="px-3 py-2 bg-sage-800 hover:bg-sage-700 text-sage-100 rounded-lg text-xs font-bold border border-sage-600 transition">
+                        עריכת כותרות
+                    </button>
+                    <button onclick="exportData()" class="px-3 py-2 bg-sage-800 hover:bg-sage-700 text-sage-100 rounded-lg text-xs font-bold border border-sage-600 transition">
+                        גיבוי JSON
+                    </button>
+                    <label class="px-3 py-2 bg-sage-800 hover:bg-sage-700 text-sage-100 rounded-lg text-xs font-bold border border-sage-600 transition cursor-pointer">
+                        שחזור גיבוי
+                        <input type="file" id="import-file" class="hidden" accept=".json" onchange="importData(event)">
+                    </label>
+                </div>
+            </div>
+
+            <!-- Admin Tabs Switcher -->
+            <div class="flex items-center gap-2 mb-6 border-b border-sage-700 pb-4">
+                <button type="button" onclick="switchAdminTab('tools')" id="admin-tab-tools" class="px-4 py-2 rounded-lg text-sm font-bold bg-sage-700 text-cream transition">
+                    ניהול אתרים ותכנים
+                </button>
+                <button type="button" onclick="switchAdminTab('tips')" id="admin-tab-tips" class="px-4 py-2 rounded-lg text-sm font-bold bg-sage-800 text-sage-300 hover:bg-sage-700 transition">
+                    ניהול טיפים הדרכתיים 💡
+                </button>
+            </div>
+
+            <!-- FORM 1: ITEMS / TOOLS FORM -->
+            <form id="item-form" onsubmit="saveItem(event)" class="bg-sage-800/70 p-6 rounded-2xl border border-sage-700">
+                <h3 id="form-heading" class="text-lg font-bold mb-4 text-sage-200">
+                    <span>+ הוספת אתר או תוכן חדש מאת מורן קומרז</span>
+                </h3>
+                <input type="hidden" id="item-id" value="">
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mb-4">
+                    <div>
+                        <label class="block text-xs font-bold text-sage-300 mb-1">שם האתר / הכלי *</label>
+                        <input type="text" id="item-title" required="" placeholder="לדוגמה: מחשבון ניהול זמן" class="w-full px-3.5 py-2.5 rounded-lg bg-sage-900 border border-sage-600 text-cream">
+                    </div>
+                    <div>
+                        <label class="block text-xs font-bold text-sage-300 mb-1">קטגוריה *</label>
+                        <select id="item-category" class="w-full px-3.5 py-2.5 rounded-lg bg-sage-900 border border-sage-600 text-cream">
+                            <option value="site">אתר / אפליקציה שבניתי</option>
+                            <option value="lecture">חומרי הרצאה ומצגות</option>
+                            <option value="guide">מדריך מקצועי</option>
+                            <option value="tool">כלי עזר / תבנית</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label class="block text-xs font-bold text-sage-300 mb-1">שיוך להרצאה (אופציונלי)</label>
+                        <input type="text" id="item-lecture-tag" placeholder="לדוגמה: סדנת AI ופרודוקטיביות" class="w-full px-3.5 py-2.5 rounded-lg bg-sage-900 border border-sage-600 text-cream">
+                    </div>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mb-4">
+                    <div class="md:col-span-2">
+                        <label class="block text-xs font-bold text-sage-300 mb-1">קישור לאתר / לקובץ (URL)</label>
+                        <input type="url" id="item-url" placeholder="https://example.com" dir="ltr" class="w-full px-3.5 py-2.5 rounded-lg bg-sage-900 border border-sage-600 text-cream text-left">
+                    </div>
+                    <div>
+                        <label class="block text-xs font-bold text-sage-300 mb-1">סמל וינטג' *</label>
+                        <select id="item-icon" class="w-full px-3.5 py-2.5 rounded-lg bg-sage-900 border border-sage-600 text-cream">
+                            <option value="gears">גלגלי שיניים (כלים)</option>
+                            <option value="sapling">שתיל צומח (צמיחה)</option>
+                            <option value="megaphone">מגפון (הרצאות)</option>
+                            <option value="lighthouse">מגדלור (הכוונה)</option>
+                            <option value="flag">דגל בפסגה (יעדים)</option>
+                            <option value="book">ספר פתוח (ידע)</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="mb-4">
+                    <label class="block text-xs font-bold text-sage-300 mb-1">תיאור קצר בכרטיסייה *</label>
+                    <input type="text" id="item-desc" required="" placeholder="הסבר קצר על הכלי..." class="w-full px-3.5 py-2.5 rounded-lg bg-sage-900 border border-sage-600 text-cream">
+                </div>
+                <div class="mb-5">
+                    <label class="block text-xs font-bold text-sage-300 mb-1">תוכן מורחב / הנחיות שימוש</label>
+                    <textarea id="item-content" rows="3" placeholder="הסבר מפורט שיופיע בלחיצה על 'פרטים והנחיות'..." class="w-full px-3.5 py-2.5 rounded-lg bg-sage-900 border border-sage-600 text-cream"></textarea>
+                </div>
+                <div class="flex items-center justify-end gap-3">
+                    <button type="button" id="cancel-edit-btn" onclick="resetForm()" class="hidden px-4 py-2.5 rounded-lg border border-sage-500 text-sage-300 text-sm font-bold">ביטול</button>
+                    <button type="submit" class="px-6 py-2.5 bg-sage-400 text-sage-950 font-black rounded-lg text-sm shadow">שמירת כלי בארגז הכלים</button>
+                </div>
+            </form>
+
+            <!-- FORM 2: TIPS FORM -->
+            <form id="tip-form" onsubmit="saveTip(event)" class="bg-sage-800/70 p-6 rounded-2xl border border-sage-700 hidden">
+                <h3 id="tip-form-heading" class="text-lg font-bold mb-4 text-sage-200">
+                    <span>+ הוספת טיפ הדרכתי חדש מאת מורן קומרז</span>
+                </h3>
+                <input type="hidden" id="tip-id" value="">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
+                    <div>
+                        <label class="block text-xs font-bold text-sage-300 mb-1">כותרת הטיפ *</label>
+                        <input type="text" id="tip-title" required="" placeholder="לדוגמה: חוקרים ומנסחים..." class="w-full px-3.5 py-2.5 rounded-lg bg-sage-900 border border-sage-600 text-cream">
+                    </div>
+                    <div>
+                        <label class="block text-xs font-bold text-sage-300 mb-1">קטגוריית טיפ *</label>
+                        <select id="tip-category" class="w-full px-3.5 py-2.5 rounded-lg bg-sage-900 border border-sage-600 text-cream">
+                            <option value="active">למידה פעילה וחקר</option>
+                            <option value="reflection">רפלקציה ומטה-קוגניציה</option>
+                            <option value="memory">זיכרון וקיבוע ידע</option>
+                            <option value="engagement">מעורבות והנעת לומדים</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="mb-4">
+                    <label class="block text-xs font-bold text-sage-300 mb-1">תוכן הטיפ המלא (ניתן לשלב כותרות ושלבים) *</label>
+                    <textarea id="tip-body" rows="6" required="" placeholder="תוכן הטיפ המפורט..." class="w-full px-3.5 py-2.5 rounded-lg bg-sage-900 border border-sage-600 text-cream"></textarea>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-5">
+                    <div>
+                        <label class="block text-xs font-bold text-sage-300 mb-1">כותרת למקור המידע (אופציונלי)</label>
+                        <input type="text" id="tip-source-title" placeholder="לדוגמה: המרחב הפדגוגי, משרד החינוך" class="w-full px-3.5 py-2.5 rounded-lg bg-sage-900 border border-sage-600 text-cream">
+                    </div>
+                    <div>
+                        <label class="block text-xs font-bold text-sage-300 mb-1">קישור למקור המידע (URL)</label>
+                        <input type="url" id="tip-source-url" placeholder="https://..." dir="ltr" class="w-full px-3.5 py-2.5 rounded-lg bg-sage-900 border border-sage-600 text-cream text-left">
+                    </div>
+                </div>
+                <div class="flex items-center justify-end gap-3">
+                    <button type="button" id="cancel-tip-edit-btn" onclick="resetTipForm()" class="hidden px-4 py-2.5 rounded-lg border border-sage-500 text-sage-300 text-sm font-bold">ביטול</button>
+                    <button type="submit" class="px-6 py-2.5 bg-sage-400 text-sage-950 font-black rounded-lg text-sm shadow">שמירת טיפ הדרכתי</button>
+                </div>
+            </form>
+        </div>
+    </section>
+
+    <!-- MAIN CONTENT AREA -->
+    <main id="main-content" class="flex-grow max-w-7xl w-full mx-auto px-3 sm:px-8 py-8 sm:py-12 relative z-20">
+        
+        <!-- SECTION SWITCHER (Tools vs. Tips) -->
+        <div class="flex items-center justify-center gap-3 mb-8">
+            <button type="button" onclick="switchMainTab('tools')" id="main-tab-tools" class="px-6 py-3 rounded-2xl font-black text-base transition bg-sage-900 text-cream shadow-md border-2 border-sage-800 flex items-center gap-2">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"></path></svg>
+                <span>אתרים וכלים שבניתי</span>
+            </button>
+            <button type="button" onclick="switchMainTab('tips')" id="main-tab-tips" class="px-6 py-3 rounded-2xl font-black text-base transition bg-cream/90 text-sage-900 hover:bg-sage-200 border-2 border-sage-800/40 shadow-sm flex items-center gap-2">
+                <svg class="w-5 h-5 text-sage-700" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"></path></svg>
+                <span>טיפים הדרכתיים מאת מורן קומרז</span>
+            </button>
+        </div>
+
+        <!-- TAB 1: TOOLS SECTION -->
+        <div id="section-tools">
+            <div class="bg-cream/95 backdrop-blur-md p-3.5 sm:p-6 rounded-2xl border-2 border-sage-800/20 shadow-sm mb-7 sm:mb-10">
+                <div class="flex flex-col lg:flex-row lg:items-center justify-between gap-3.5 sm:gap-4">
+                    <div class="relative w-full lg:w-72 order-1 lg:order-2">
+                        <label for="search-input" class="sr-only">חיפוש כלי או נושא</label>
+                        <input type="search" id="search-input" oninput="renderItems()" placeholder="חיפוש כלי, אתר או הרצאה של מורן..." class="w-full pl-10 pr-4 py-3 sm:py-2.5 min-h-[44px] rounded-xl bg-sage-100 border border-sage-500/60 text-sage-950 placeholder-sage-700 text-sm font-semibold focus:outline-none focus:border-sage-900">
+                        <svg class="w-5 h-5 text-sage-700 absolute left-3.5 top-3 sm:top-2.5 pointer-events-none" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg>
+                    </div>
+                    <div role="tablist" class="flex items-center gap-2 overflow-x-auto no-scrollbar pb-1 sm:pb-0 -mx-1 px-1 sm:mx-0 sm:px-0 sm:flex-wrap order-2 lg:order-1" id="category-tabs">
+                        <button type="button" role="tab" aria-selected="true" onclick="setFilter('all')" data-cat="all" class="cat-btn shrink-0 px-4 py-2.5 min-h-[42px] rounded-xl text-xs sm:text-sm font-bold transition bg-sage-900 text-cream shadow-sm">הכל</button>
+                        <button type="button" role="tab" aria-selected="false" onclick="setFilter('site')" data-cat="site" class="cat-btn shrink-0 px-4 py-2.5 min-h-[42px] rounded-xl text-xs sm:text-sm font-bold transition bg-sage-200/80 text-sage-900 hover:bg-sage-300">אתרים ואפליקציות שבניתי</button>
+                        <button type="button" role="tab" aria-selected="false" onclick="setFilter('lecture')" data-cat="lecture" class="cat-btn shrink-0 px-4 py-2.5 min-h-[42px] rounded-xl text-xs sm:text-sm font-bold transition bg-sage-200/80 text-sage-900 hover:bg-sage-300">תכני הרצאות ומצגות</button>
+                        <button type="button" role="tab" aria-selected="false" onclick="setFilter('guide')" data-cat="guide" class="cat-btn shrink-0 px-4 py-2.5 min-h-[42px] rounded-xl text-xs sm:text-sm font-bold transition bg-sage-200/80 text-sage-900 hover:bg-sage-300">מדריכים ומאמרים</button>
+                        <button type="button" role="tab" aria-selected="false" onclick="setFilter('tool')" data-cat="tool" class="cat-btn shrink-0 px-4 py-2.5 min-h-[42px] rounded-xl text-xs sm:text-sm font-bold transition bg-sage-200/80 text-sage-900 hover:bg-sage-300">כלי עזר ותבניות</button>
+                    </div>
+                </div>
+            </div>
+
+            <div id="items-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 sm:gap-7">
+                <article class="tool-card rounded-2xl border-2 border-sage-800/25 p-6 flex flex-col justify-between relative group">
+                    
+                    <div>
+                        <div class="flex items-start justify-between gap-3 mb-4">
+                            <div class="w-14 h-14 rounded-2xl bg-sage-800 text-cream flex items-center justify-center stamp-effect shadow-md shrink-0">
+                                <svg class="w-8 h-8" viewBox="0 0 64 64" fill="currentColor"><path d="M26 10l-1.5 4.5a14 14 0 00-4.2 1.8l-4.3-2.1-4.2 4.2 2.1 4.3a14 14 0 00-1.8 4.2L7.5 28.5v6l4.5 1.5a14 14 0 001.8 4.2l-2.1 4.3 4.2 4.2 4.3-2.1a14 14 0 004.2 1.8l1.5 4.5h6l1.5-4.5a14 14 0 004.2-1.8l4.3 2.1 4.2-4.2-2.1-4.3a14 14 0 001.8-4.2l4.5-1.5v-6l-4.5-1.5a14 14 0 00-1.8-4.2l2.1-4.3-4.2-4.2-4.3 2.1a14 14 0 00-4.2-1.8L32 10h-6zm3 14a7.5 7.5 0 110 15 7.5 7.5 0 010-15zm19 14l-1 3a9 9 0 00-2.8 1.2l-2.8-1.4-2.8 2.8 1.4 2.8a9 9 0 00-1.2 2.8l-3 1v4l3 1a9 9 0 001.2 2.8l-1.4 2.8 2.8 2.8 2.8-1.4a9 9 0 002.8 1.2l1 3h4l1-3a9 9 0 002.8-1.2l2.8 1.4 2.8-2.8-1.4-2.8a9 9 0 001.2-2.8l3-1v-4l-3-1a9 9 0 00-1.2-2.8l1.4-2.8-2.8-2.8-2.8 1.4a9 9 0 00-2.8-1.2l-1-3h-4zm2 9a5 5 0 110 10 5 5 0 010-10z"></path></svg>
+                            </div>
+                            <span class="text-xs font-bold px-2.5 py-1 rounded-full bg-sage-300/80 text-sage-950 border border-sage-600/30">
+                                אתר / אפליקציה שבניתי
+                            </span>
+                        </div>
+                        <h3 class="font-serif text-xl sm:text-2xl font-bold text-sage-950 mb-2 leading-snug">בוט להתייעצות בתחום הלמידה</h3>
+                        <p class="text-sage-800 text-sm leading-relaxed mb-4">בוט לייעוץ או למידה בתחום ההדרכה, התקשורת, הזיכרון, המישוב והחניכה.</p>
+                        <div class="text-xs font-bold text-sage-700 mb-4 flex items-center gap-1.5 bg-sage-200/60 px-2.5 py-1 rounded-md w-fit">
+                            <span class="w-1.5 h-1.5 rounded-full bg-sage-800"></span>
+                            <span>נבנה ע״י מורן קומרז</span>
+                        </div>
+                    </div>
+                    <div class="pt-4 border-t border-sage-400/40 flex items-center justify-between gap-2.5">
+                        <button type="button" onclick="openReaderModal('item-1793101881171')" class="flex-1 px-3.5 py-2.5 min-h-[44px] rounded-xl text-xs font-bold text-sage-900 bg-sage-200/90 hover:bg-sage-300 flex items-center justify-center gap-1.5">
+                            פרטים והנחיות
+                        </button>
+                        
+                        <a href="https://notebook.google.com/notebook/d991b42a-57b7-483f-8dfd-a63eddd429b4" target="_blank" rel="noopener noreferrer" class="flex-1 px-4 py-2.5 min-h-[44px] rounded-xl text-xs font-bold bg-sage-900 text-cream hover:bg-sage-800 flex items-center justify-center gap-1.5 shadow-sm">
+                            כניסה לאתר
+                        </a>
+                    </div>
+                </article>
+            
+                <article class="tool-card rounded-2xl border-2 border-sage-800/25 p-6 flex flex-col justify-between relative group">
+                    
+                    <div>
+                        <div class="flex items-start justify-between gap-3 mb-4">
+                            <div class="w-14 h-14 rounded-2xl bg-sage-800 text-cream flex items-center justify-center stamp-effect shadow-md shrink-0">
+                                <svg class="w-8 h-8" viewBox="0 0 64 64" fill="currentColor"><path d="M32 6l-7 8h14l-7-8zm-5 10v6h10v-6H27zm-3 8l-4 28h24l-4-28H24zm-10 30v4h36v-4H14z"></path></svg>
+                            </div>
+                            <span class="text-xs font-bold px-2.5 py-1 rounded-full bg-sage-300/80 text-sage-950 border border-sage-600/30">
+                                אתר / אפליקציה שבניתי
+                            </span>
+                        </div>
+                        <h3 class="font-serif text-xl sm:text-2xl font-bold text-sage-950 mb-2 leading-snug">סימולטור תקשורת בין אישית</h3>
+                        <p class="text-sage-800 text-sm leading-relaxed mb-4">תרגול מיומנויות תקשורת בין אישיות - היכנסו, עקבו אחרי ההוראות ותתרגלו!</p>
+                        <div class="text-xs font-bold text-sage-700 mb-4 flex items-center gap-1.5 bg-sage-200/60 px-2.5 py-1 rounded-md w-fit">
+                            <span class="w-1.5 h-1.5 rounded-full bg-sage-800"></span>
+                            <span>נבנה ע״י מורן קומרז</span>
+                        </div>
+                    </div>
+                    <div class="pt-4 border-t border-sage-400/40 flex items-center justify-between gap-2.5">
+                        <button type="button" onclick="openReaderModal('item-1793101761631')" class="flex-1 px-3.5 py-2.5 min-h-[44px] rounded-xl text-xs font-bold text-sage-900 bg-sage-200/90 hover:bg-sage-300 flex items-center justify-center gap-1.5">
+                            פרטים והנחיות
+                        </button>
+                        
+                        <a href="https://sites.google.com/view/morankomeraz/בית" target="_blank" rel="noopener noreferrer" class="flex-1 px-4 py-2.5 min-h-[44px] rounded-xl text-xs font-bold bg-sage-900 text-cream hover:bg-sage-800 flex items-center justify-center gap-1.5 shadow-sm">
+                            כניסה לאתר
+                        </a>
+                    </div>
+                </article>
+            </div>
+            
+            <div id="empty-state" class="text-center py-16 bg-cream/60 rounded-2xl border-2 border-dashed border-sage-600/40 hidden">
+                <h3 class="text-xl font-serif font-bold text-sage-900 mb-1">לא נמצאו תכנים תואמים</h3>
+                <p class="text-sage-700 text-sm mb-4">נסה לשנות את מילת החיפוש.</p>
+                <button onclick="resetFilters()" class="px-4 py-2 bg-sage-800 text-cream rounded-lg text-sm font-bold">הצג הכל</button>
+            </div>
+        </div>
+
+        <!-- TAB 2: TIPS SECTION -->
+        <div id="section-tips" class="hidden">
+            <div class="bg-cream/95 backdrop-blur-md p-3.5 sm:p-6 rounded-2xl border-2 border-sage-800/20 shadow-sm mb-7 sm:mb-10">
+                <div class="flex flex-col lg:flex-row lg:items-center justify-between gap-3.5 sm:gap-4">
+                    <div class="relative w-full lg:w-72 order-1 lg:order-2">
+                        <label for="search-tips-input" class="sr-only">חיפוש בטיפים</label>
+                        <input type="search" id="search-tips-input" oninput="renderTips()" placeholder="חיפוש בטיפים ההדרכתיים..." class="w-full pl-10 pr-4 py-3 sm:py-2.5 min-h-[44px] rounded-xl bg-sage-100 border border-sage-500/60 text-sage-950 placeholder-sage-700 text-sm font-semibold focus:outline-none focus:border-sage-900">
+                        <svg class="w-5 h-5 text-sage-700 absolute left-3.5 top-3 sm:top-2.5 pointer-events-none" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg>
+                    </div>
+                    <div role="tablist" class="flex items-center gap-2 overflow-x-auto no-scrollbar pb-1 sm:pb-0 -mx-1 px-1 sm:mx-0 sm:px-0 sm:flex-wrap order-2 lg:order-1" id="tip-category-tabs">
+                        <button type="button" role="tab" aria-selected="true" onclick="setTipFilter('all')" data-tipcat="all" class="tip-cat-btn shrink-0 px-4 py-2.5 min-h-[42px] rounded-xl text-xs sm:text-sm font-bold transition bg-sage-900 text-cream shadow-sm">כל הטיפים</button>
+                        <button type="button" role="tab" aria-selected="false" onclick="setTipFilter('active')" data-tipcat="active" class="tip-cat-btn shrink-0 px-4 py-2.5 min-h-[42px] rounded-xl text-xs sm:text-sm font-bold transition bg-sage-200/80 text-sage-900 hover:bg-sage-300">למידה פעילה וחקר</button>
+                        <button type="button" role="tab" aria-selected="false" onclick="setTipFilter('reflection')" data-tipcat="reflection" class="tip-cat-btn shrink-0 px-4 py-2.5 min-h-[42px] rounded-xl text-xs sm:text-sm font-bold transition bg-sage-200/80 text-sage-900 hover:bg-sage-300">רפלקציה ומטה-קוגניציה</button>
+                        <button type="button" role="tab" aria-selected="false" onclick="setTipFilter('memory')" data-tipcat="memory" class="tip-cat-btn shrink-0 px-4 py-2.5 min-h-[42px] rounded-xl text-xs sm:text-sm font-bold transition bg-sage-200/80 text-sage-900 hover:bg-sage-300">זיכרון וקיבוע ידע</button>
+                        <button type="button" role="tab" aria-selected="false" onclick="setTipFilter('engagement')" data-tipcat="engagement" class="tip-cat-btn shrink-0 px-4 py-2.5 min-h-[42px] rounded-xl text-xs sm:text-sm font-bold transition bg-sage-200/80 text-sage-900 hover:bg-sage-300">מעורבות ולומדים</button>
+                    </div>
+                </div>
+            </div>
+
+            <div id="tips-grid" class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <article class="tip-card rounded-2xl border-2 border-sage-800/25 p-6 flex flex-col justify-between relative">
+                    
+                    <div>
+                        <div class="flex items-center justify-between gap-2 mb-3">
+                            <span class="text-xs font-bold px-3 py-1 rounded-full bg-sage-800 text-cream">
+                                למידה פעילה וחקר
+                            </span>
+                            <span class="text-xs font-bold text-sage-700">מאת: מורן קומרז</span>
+                        </div>
+                        <h3 class="font-serif text-xl font-bold text-sage-950 mb-3">חוקרים ומנסחים – למידה מתוך מאמרים מקצועיים 📚</h3>
+                        <div class="bg-sage-100/90 p-4 rounded-xl text-sm sm:text-base leading-relaxed text-sage-950 whitespace-pre-line mb-4 border border-sage-400/40">במקום להאכיל את הלומדים במסקנות או בתשובות הסופיות, תנו להם לחוות את החקר בעצמם.
+
+בחרו מאמר מקצועי קצר, נוהל עבודה מפורט או דוח הפקת לקחים עדכני שנכתב ביחידות הקצה שלכם:
+1. חלקו את הכיתה לקבוצות קטנות.
+2. הנחו את הלומדים לקרוא את מקור המידע שקיבלו ולחלץ ממנו את עקרונות הפעולה, המסקנות או את דרך העבודה.
+3. ולבסוף, לחשוב בעצמם על 2 דוגמאות שיכולות להסביר את העקרונות שניסחו או לכתוב תרגיל קצר / משימה שדרכה ניתן ללמוד את העקרונות שניסחו.
+4. לאחר מכן, כל זוג מעביר את התרגילים שניסח לזוג אחר ומבקש מהם לפתור אותו!
+
+כך כל הלומדים מתנסים בהבנה עמוקה של המסרים, מבצעים תהליך חשיבה עמוק ולבסוף מתרגלים את העקרונות שמצאו.
+
+חילוץ המסקנה או הכלל וניסוח תרגילים עבור אחרים דורש הבנה עמוקה של החומר ומפתח עצמאות ומנהיגות מקצועית! ✨
+
+כאן בשבילכם, מורן</div>
+                        
+                        
+                        <div class="text-xs text-sage-800 mb-4 bg-sage-200/50 p-2.5 rounded-lg flex items-center justify-between">
+                            <span><strong>למקור המידע:</strong> המרחב הפדגוגי, משרד החינוך</span>
+                            <a href="https://pop.education.gov.il/teaching-tools/teaching-practices/search-teaching-practices/students-research-mathematics/" target="_blank" rel="noopener noreferrer" class="text-sage-950 font-bold underline hover:text-sage-600">קישור למקור</a>
+                        </div>
+                    </div>
+                    <div class="pt-3 border-t border-sage-400/30 flex items-center justify-between">
+                        <span class="text-xs font-bold text-sage-700">ארגז הכלים של מורן קומרז</span>
+                        <button onclick="copyTipToClipboard(" חוקרים="" ומנסחים="" –="" למידה="" מתוך="" מאמרים="" מקצועיים="" 📚\n\nבמקום="" להאכיל="" את="" הלומדים="" במסקנות="" או="" בתשובות="" הסופיות,="" תנו="" להם="" לחוות="" החקר="" בעצמם.\n\nבחרו="" מאמר="" מקצועי="" קצר,="" נוהל="" עבודה="" מפורט="" דוח="" הפקת="" לקחים="" עדכני="" שנכתב="" ביחידות="" הקצה="" שלכם:\n1.="" חלקו="" הכיתה="" לקבוצות="" קטנות.\n2.="" הנחו="" לקרוא="" מקור="" המידע="" שקיבלו="" ולחלץ="" ממנו="" עקרונות="" הפעולה,="" המסקנות="" דרך="" העבודה.\n3.="" ולבסוף,="" לחשוב="" בעצמם="" על="" 2="" דוגמאות="" שיכולות="" להסביר="" העקרונות="" שניסחו="" לכתוב="" תרגיל="" קצר="" משימה="" שדרכה="" ניתן="" ללמוד="" שניסחו.\n4.="" לאחר="" מכן,="" כל="" זוג="" מעביר="" התרגילים="" שניסח="" לזוג="" אחר="" ומבקש="" מהם="" לפתור="" אותו!\n\nכך="" מתנסים="" בהבנה="" עמוקה="" של="" המסרים,="" מבצעים="" תהליך="" חשיבה="" עמוק="" ולבסוף="" מתרגלים="" שמצאו.\n\nחילוץ="" המסקנה="" הכלל="" וניסוח="" תרגילים="" עבור="" אחרים="" דורש="" הבנה="" החומר="" ומפתח="" עצמאות="" ומנהיגות="" מקצועית!="" ✨\n\nכאן="" בשבילכם,="" מורן")"="" class="px-3.5 py-2 bg-sage-900 text-cream rounded-xl text-xs font-bold hover:bg-sage-800 transition flex items-center gap-1.5 shadow-sm">
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 5H6a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2v-1M8 5a2 2 0 002 2h2a2 2 0 002-2M8 5a2 2 0 012-2h2a2 2 0 012 2m0 0h2a2 2 0 012 2v3m2 4H10m0 0l3-3m-3 3l3 3"></path></svg>
+                            <span>העתקת טיפ</span>
+                        </button>
+                    </div>
+                </article>
+            
+                <article class="tip-card rounded-2xl border-2 border-sage-800/25 p-6 flex flex-col justify-between relative">
+                    
+                    <div>
+                        <div class="flex items-center justify-between gap-2 mb-3">
+                            <span class="text-xs font-bold px-3 py-1 rounded-full bg-sage-800 text-cream">
+                                רפלקציה ומטה-קוגניציה
+                            </span>
+                            <span class="text-xs font-bold text-sage-700">מאת: מורן קומרז</span>
+                        </div>
+                        <h3 class="font-serif text-xl font-bold text-sage-950 mb-3">לכתוב כדי להבין – רפלקציה מונחית בסיום משימה ✍️</h3>
+                        <div class="bg-sage-100/90 p-4 rounded-xl text-sm sm:text-base leading-relaxed text-sage-950 whitespace-pre-line mb-4 border border-sage-400/40">ביצוע משימה הוא רק חצי מהלמידה, החצי השני هو פיענוח המשמעות שלה.
+אמצו שיגרה של כתיבה רפלקטיבית מונחית מיד לאחר הגשת תוצר / תרגול מעשי.
+
+בקשו מכל לומד לענות בכתב על 3 שאלות קצרות:
+1. איזה אתגר לא צפוי פגשתי במהלך הביצוע ואיך פתרתי אותו?
+2. באיזה שלב הרגשתי הכי בטוח ומדוע?
+3. איזה לקח מקצועי אקח איתי למשימה הבאה?
+
+ביצוע תהליך חשיבה הפנימי וכתיבתו מפתחת מודעות מטה-קוגניטיבית, מעמיקה את שימור הידע והופכת ניסיון מקרי או חד פעמי למומחיות יציבה! 💡
+
+כאן בשבילכם, מורן</div>
+                        
+                        
+                        <div class="text-xs text-sage-800 mb-4 bg-sage-200/50 p-2.5 rounded-lg flex items-center justify-between">
+                            <span><strong>למקור המידע:</strong> המרחב הפדגוגי, משרד החינוך</span>
+                            <a href="https://pop.education.gov.il/teaching-tools/teaching-practices/search-teaching-practices/reflective-writing/" target="_blank" rel="noopener noreferrer" class="text-sage-950 font-bold underline hover:text-sage-600">קישור למקור</a>
+                        </div>
+                    </div>
+                    <div class="pt-3 border-t border-sage-400/30 flex items-center justify-between">
+                        <span class="text-xs font-bold text-sage-700">ארגז הכלים של מורן קומרז</span>
+                        <button onclick="copyTipToClipboard(" לכתוב="" כדי="" להבין="" –="" רפלקציה="" מונחית="" בסיום="" משימה="" ✍️\n\nביצוע="" הוא="" רק="" חצי="" מהלמידה,="" החצי="" השני="" هو="" פיענוח="" המשמעות="" שלה.\nאמצו="" שיגרה="" של="" כתיבה="" רפלקטיבית="" מיד="" לאחר="" הגשת="" תוצר="" תרגול="" מעשי.\n\nבקשו="" מכל="" לומד="" לענות="" בכתב="" על="" 3="" שאלות="" קצרות:\n1.="" איזה="" אתגר="" לא="" צפוי="" פגשתי="" במהלך="" הביצוע="" ואיך="" פתרתי="" אותו?\n2.="" באיזה="" שלב="" הרגשתי="" הכי="" בטוח="" ומדוע?\n3.="" לקח="" מקצועי="" אקח="" איתי="" למשימה="" הבאה?\n\nביצוע="" תהליך="" חשיבה="" הפנימי="" וכתיבתו="" מפתחת="" מודעות="" מטה-קוגניטיבית,="" מעמיקה="" את="" שימור="" הידע="" והופכת="" ניסיון="" מקרי="" או="" חד="" פעמי="" למומחיות="" יציבה!="" 💡\n\nכאן="" בשבילכם,="" מורן")"="" class="px-3.5 py-2 bg-sage-900 text-cream rounded-xl text-xs font-bold hover:bg-sage-800 transition flex items-center gap-1.5 shadow-sm">
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 5H6a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2v-1M8 5a2 2 0 002 2h2a2 2 0 002-2M8 5a2 2 0 012-2h2a2 2 0 012 2m0 0h2a2 2 0 012 2v3m2 4H10m0 0l3-3m-3 3l3 3"></path></svg>
+                            <span>העתקת טיפ</span>
+                        </button>
+                    </div>
+                </article>
+            
+                <article class="tip-card rounded-2xl border-2 border-sage-800/25 p-6 flex flex-col justify-between relative">
+                    
+                    <div>
+                        <div class="flex items-center justify-between gap-2 mb-3">
+                            <span class="text-xs font-bold px-3 py-1 rounded-full bg-sage-800 text-cream">
+                                זיכרון וקיבוע ידע
+                            </span>
+                            <span class="text-xs font-bold text-sage-700">מאת: מורן קומרז</span>
+                        </div>
+                        <h3 class="font-serif text-xl font-bold text-sage-950 mb-3">אל תציפו – תנו למוח זמן לקבע את המידע 🧠</h3>
+                        <div class="bg-sage-100/90 p-4 rounded-xl text-sm sm:text-base leading-relaxed text-sage-950 whitespace-pre-line mb-4 border border-sage-400/40">קרה לכם שהעברתם המון חומר חשוב, אבל שבוע אחר כך אף אחד לא זכר כלום?
+המוח לא מסוגל לקלוט מידע חדש ברצף ללא הפוגות עיבוד!
+
+בכל 15–20 דקות של הדרכה – עצרו לדקה או שתיים:
+- תנו לחניכים לרשום לעצמם נקודה מרכזית.
+- בקשו מהם לשתף אחד את השני במושג אחד שהפתיע אותם/חידש להם.
+- תנו תרגול קצרצר שדורש היזכרות מהירה בחומר שנלמד עד כה.
+
+ההפוגות הקטנות האלו מאפשרות למוח לקודד את הידע בזיכרון לטווח ארוך ולמנוע מחיקה מהירה! ⏳
+
+כאן בשבילכם, מורן</div>
+                        
+                        
+                        <div class="text-xs text-sage-800 mb-4 bg-sage-200/50 p-2.5 rounded-lg flex items-center justify-between">
+                            <span><strong>למקור המידע:</strong> המרחב הפדגוגי, משרד החינוך</span>
+                            <a href="https://pop.education.gov.il/teaching-tools/teaching-practices/search-teaching-practices/measures-to-improve-memory/" target="_blank" rel="noopener noreferrer" class="text-sage-950 font-bold underline hover:text-sage-600">קישור למקור</a>
+                        </div>
+                    </div>
+                    <div class="pt-3 border-t border-sage-400/30 flex items-center justify-between">
+                        <span class="text-xs font-bold text-sage-700">ארגז הכלים של מורן קומרז</span>
+                        <button onclick="copyTipToClipboard(" אל="" תציפו="" –="" תנו="" למוח="" זמן="" לקבע="" את="" המידע="" 🧠\n\nקרה="" לכם="" שהעברתם="" המון="" חומר="" חשוב,="" אבל="" שבוע="" אחר="" כך="" אף="" אחד="" לא="" זכר="" כלום?\nהמוח="" מסוגל="" לקלוט="" מידע="" חדש="" ברצף="" ללא="" הפוגות="" עיבוד!\n\nבכל="" 15–20="" דקות="" של="" הדרכה="" עצרו="" לדקה="" או="" שתיים:\n-="" לחניכים="" לרשום="" לעצמם="" נקודה="" מרכזית.\n-="" בקשו="" מהם="" לשתף="" השני="" במושג="" שהפתיע="" אותם="" חידש="" להם.\n-="" תרגול="" קצרצר="" שדורש="" היזכרות="" מהירה="" בחומר="" שנלמד="" עד="" כה.\n\nההפוגות="" הקטנות="" האלו="" מאפשרות="" לקודד="" הידע="" בזיכרון="" לטווח="" ארוך="" ולמנוע="" מחיקה="" מהירה!="" ⏳\n\nכאן="" בשבילכם,="" מורן")"="" class="px-3.5 py-2 bg-sage-900 text-cream rounded-xl text-xs font-bold hover:bg-sage-800 transition flex items-center gap-1.5 shadow-sm">
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 5H6a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2v-1M8 5a2 2 0 002 2h2a2 2 0 002-2M8 5a2 2 0 012-2h2a2 2 0 012 2m0 0h2a2 2 0 012 2v3m2 4H10m0 0l3-3m-3 3l3 3"></path></svg>
+                            <span>העתקת טיפ</span>
+                        </button>
+                    </div>
+                </article>
+            </div>
+
+            <div id="empty-tips-state" class="hidden text-center py-16 bg-cream/60 rounded-2xl border-2 border-dashed border-sage-600/40">
+                <h3 class="text-xl font-serif font-bold text-sage-900 mb-1">לא נמצאו טיפים הדרכתיים תואמים</h3>
+                <p class="text-sage-700 text-sm mb-4">נסה לשנות את מילת החיפוש או הסינון.</p>
+                <button onclick="resetTipFilters()" class="px-4 py-2 bg-sage-800 text-cream rounded-lg text-sm font-bold">הצג את כל הטיפים</button>
+            </div>
+        </div>
+
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="bg-sage-950 text-sage-200 py-10 px-4 sm:px-8 border-t-4 border-sage-800 relative z-20 mt-12">
+        <div class="max-w-7xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-6">
+            <div class="flex items-center gap-3">
+                <div class="w-9 h-9 rounded-full bg-sage-700 text-cream flex items-center justify-center stamp-effect">
+                    <svg class="w-5 h-5" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M12 2L9 5h6l-3-3zm-2 4v3h4V6h-4zm-1 4l-1.5 10h9L15 10H9zm-3 11v2h12v-2H6z"></path>
+                    </svg>
+                </div>
+                <div>
+                    <p class="font-serif font-bold text-cream text-lg leading-none" id="footer-title">ארגז הכלים שלי אליכם</p>
+                    <p class="text-xs text-sage-400 mt-1">כל האתרים, הכלים והטיפים מאת <strong class="text-cream">מורן קומרז</strong> במקום אחד.</p>
+                </div>
+            </div>
+            <div class="text-xs text-sage-300 text-center sm:text-left">
+                <div class="font-bold text-sm text-cream mb-0.5">האתר נבנה ופותח על ידי מורן קומרז</div>
+                <span class="text-sage-400">כל הזכויות על האתרים, הכלים והתכנים שמורות למורן קומרז ©</span>
+            </div>
+        </div>
+    </footer>
+
+    <!-- TOAST NOTIFICATION -->
+    <div id="toast-msg" role="status" aria-live="polite" class="fixed bottom-4 right-4 left-4 sm:left-6 sm:right-auto z-50 bg-sage-900 text-cream px-5 py-3.5 rounded-xl shadow-2xl border border-sage-600 font-bold text-sm items-center justify-center sm:justify-start gap-2 hidden">
+        <span id="toast-text">הכלי נשמר בהצלחה! אל תשכח ללחוץ על "פרסום שינויים לכולם" כדי לעדכן בגיטהאב.</span>
+    </div>
+
+    <!-- MODAL 1: CONTENT READER -->
+    <div id="reader-modal" role="dialog" aria-modal="true" onclick="if(event.target === this) closeReaderModal()" class="fixed inset-0 z-50 items-end sm:items-center justify-center p-0 sm:p-4 bg-sage-950/75 backdrop-blur-sm hidden">
+        <div class="bg-cream border-t-2 sm:border-2 border-sage-800 rounded-t-3xl sm:rounded-2xl max-w-2xl w-full max-h-[88vh] flex flex-col shadow-2xl overflow-hidden">
+            <div class="p-4 sm:p-6 bg-sage-200/70 border-b border-sage-400/50 flex items-start justify-between gap-3">
+                <div class="flex items-center gap-3 min-w-0">
+                    <div id="modal-icon-box" class="w-12 h-12 sm:w-14 sm:h-14 rounded-2xl bg-sage-800 text-cream flex items-center justify-center stamp-effect shrink-0"><svg class="w-8 h-8" viewBox="0 0 64 64" fill="currentColor"><path d="M32 6l-7 8h14l-7-8zm-5 10v6h10v-6H27zm-3 8l-4 28h24l-4-28H24zm-10 30v4h36v-4H14z"></path></svg></div>
+                    <div class="min-w-0">
+                        <div class="flex flex-wrap items-center gap-1.5 mb-1">
+                            <span id="modal-tag" class="text-xs font-bold px-2.5 py-0.5 rounded-full bg-sage-800 text-cream">סימולטור</span>
+                            <span class="text-xs font-bold px-2.5 py-0.5 rounded-full bg-sage-300 text-sage-950">מאת: מורן קומרז</span>
+                        </div>
+                        <h3 id="modal-title" class="font-serif text-xl sm:text-2xl font-black text-sage-950 leading-snug">סימולטור תקשורת בין אישית</h3>
+                    </div>
+                </div>
+                <button type="button" onclick="closeReaderModal()" aria-label="סגירה" class="p-2 min-w-[42px] min-h-[42px] flex items-center justify-center text-sage-800 hover:bg-sage-300 rounded-xl transition shrink-0">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
+                </button>
+            </div>
+            <div class="p-4 sm:p-6 overflow-y-auto space-y-4 text-sage-900">
+                <p id="modal-desc" class="text-base sm:text-lg font-bold text-sage-900 leading-relaxed">תרגול מיומנויות תקשורת בין אישיות - היכנסו, עקבו אחרי ההוראות ותתרגלו!</p>
+                <div id="modal-content" class="bg-sage-100/90 p-4 sm:p-5 rounded-xl border border-sage-400/50 whitespace-pre-line text-sm sm:text-base leading-relaxed text-sage-950">סימולטור המתרגל מיומנויות תקשורת בין אישיות בעזרת סימולציות ומקרי בוחן מפורטים. 
+בנוסף, קיימים הסברים קצרים על כלים פרקטיים מתוך שיטת הnlp שנלמדים בסדנה ״הכוח של התקשורת״.</div>
+            </div>
+            <div class="p-4 sm:p-5 bg-sage-100 border-t border-sage-300 flex flex-col-reverse sm:flex-row items-stretch sm:items-center justify-between gap-2.5">
+                <button type="button" onclick="closeReaderModal()" class="w-full sm:w-auto px-5 py-3 min-h-[44px] rounded-xl border-2 border-sage-700 text-sage-900 font-bold text-sm hover:bg-sage-200 transition">סגירה</button>
+                <a id="modal-link-btn" href="https://sites.google.com/view/morankomeraz/בית" target="_blank" rel="noopener noreferrer" class="w-full sm:w-auto justify-center px-6 py-3 min-h-[44px] rounded-xl bg-sage-900 text-cream font-bold text-sm hover:bg-sage-800 transition flex items-center gap-2 shadow-md">
+                    <span>מעבר לאתר / לכלי של מורן</span>
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- MODAL 2: CONFIRM DELETE -->
+    <div id="confirm-modal" role="dialog" aria-modal="true" onclick="if(event.target === this) closeConfirmModal()" class="fixed inset-0 z-50 items-center justify-center p-4 bg-sage-950/75 backdrop-blur-sm hidden">
+        <div class="bg-cream border-2 border-sage-800 rounded-2xl max-w-sm w-full p-6 shadow-2xl text-center">
+            <h4 class="font-serif text-xl font-black text-sage-950 mb-2">מחיקת פריט</h4>
+            <p class="text-sm text-sage-800 mb-6">האם למחוק פריט זה מארגז הכלים?</p>
+            <div class="flex items-center justify-center gap-3">
+                <button type="button" onclick="closeConfirmModal()" class="flex-1 py-2.5 min-h-[44px] rounded-xl border border-sage-600 text-sage-800 font-bold text-sm hover:bg-sage-200 transition">ביטול</button>
+                <button type="button" id="confirm-delete-btn" class="flex-1 py-2.5 min-h-[44px] rounded-xl bg-red-800 text-cream font-bold text-sm hover:bg-red-700 transition">כן, מחק</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- MODAL 3: ADMIN LOGIN -->
+    <div id="login-modal" role="dialog" aria-modal="true" onclick="if(event.target === this) closeLoginModal()" class="fixed inset-0 z-50 items-center justify-center p-4 bg-sage-950/75 backdrop-blur-sm hidden">
+        <div class="bg-cream border-2 border-sage-800 rounded-2xl max-w-md w-full p-5 sm:p-6 shadow-2xl">
+            <div class="flex items-center justify-between mb-4">
+                <h3 class="font-serif text-2xl font-black text-sage-950">כניסה לאזור ניהול – מורן קומרז</h3>
+                <button type="button" onclick="closeLoginModal()" aria-label="סגירה" class="p-2 min-w-[42px] min-h-[42px] flex items-center justify-center text-sage-700 hover:bg-sage-200 rounded-lg">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
+                </button>
+            </div>
+            <p class="text-sm text-sage-800 mb-4">שלום מורן, הזן את קוד הגישה שלך לניהול התכנים:</p>
+            <form onsubmit="verifyAdminLogin(event)">
+                <label for="admin-pin-input" class="sr-only">קוד גישה</label>
+                <input type="password" inputmode="numeric" id="admin-pin-input" placeholder="קוד גישה..." required="" class="w-full px-4 py-3 min-h-[48px] rounded-xl bg-sage-100 border-2 border-sage-500 text-sage-950 font-bold text-center text-lg tracking-widest mb-3 focus:outline-none focus:border-sage-900">
+                <p id="login-error" class="text-red-700 text-xs font-bold mb-3 hidden text-center">קוד הגישה שגוי, נסה שנית</p>
+                <button type="submit" class="w-full py-3.5 min-h-[48px] bg-sage-900 text-cream font-bold rounded-xl hover:bg-sage-800 transition shadow-md">כניסה למצב ניהול</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- MODAL 4: HEADER SETTINGS -->
+    <div id="header-settings-modal" role="dialog" aria-modal="true" onclick="if(event.target === this) closeHeaderSettingsModal()" class="fixed inset-0 z-50 hidden items-end sm:items-center justify-center p-0 sm:p-4 bg-sage-950/75 backdrop-blur-sm">
+        <div class="bg-cream border-t-2 sm:border-2 border-sage-800 rounded-t-3xl sm:rounded-2xl max-w-lg w-full max-h-[90vh] overflow-y-auto p-5 sm:p-6 shadow-2xl">
+            <div class="flex items-center justify-between mb-4">
+                <h3 class="font-serif text-xl font-black text-sage-950">עריכת כותרות האתר</h3>
+                <button type="button" onclick="closeHeaderSettingsModal()" class="p-2 text-sage-700 hover:bg-sage-200 rounded-lg">✕</button>
+            </div>
+            <div class="space-y-4 mb-6">
+                <div>
+                    <label class="block text-xs font-bold text-sage-800 mb-1">כותרת ראשית (Hero)</label>
+                    <input type="text" id="custom-main-title" class="w-full px-3.5 py-2.5 rounded-lg bg-sage-100 border border-sage-400 text-sage-950">
+                </div>
+                <div>
+                    <label class="block text-xs font-bold text-sage-800 mb-1">כותרת משנה / טקסט פתיחה</label>
+                    <textarea id="custom-sub-title" rows="3" class="w-full px-3.5 py-2.5 rounded-lg bg-sage-100 border border-sage-400 text-sage-950"></textarea>
+                </div>
+            </div>
+            <div class="flex justify-end gap-3">
+                <button type="button" onclick="closeHeaderSettingsModal()" class="px-4 py-2 border border-sage-600 rounded-xl font-bold text-sm">ביטול</button>
+                <button type="button" onclick="saveCustomHeaders()" class="px-5 py-2 bg-sage-900 text-cream rounded-xl font-bold text-sm">שמירת כותרות</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // --- ICONS & LABELS ---
+        const ICONS = {
+            gears: `<svg class="w-8 h-8" viewBox="0 0 64 64" fill="currentColor"><path d="M26 10l-1.5 4.5a14 14 0 00-4.2 1.8l-4.3-2.1-4.2 4.2 2.1 4.3a14 14 0 00-1.8 4.2L7.5 28.5v6l4.5 1.5a14 14 0 001.8 4.2l-2.1 4.3 4.2 4.2 4.3-2.1a14 14 0 004.2 1.8l1.5 4.5h6l1.5-4.5a14 14 0 004.2-1.8l4.3 2.1 4.2-4.2-2.1-4.3a14 14 0 001.8-4.2l4.5-1.5v-6l-4.5-1.5a14 14 0 00-1.8-4.2l2.1-4.3-4.2-4.2-4.3 2.1a14 14 0 00-4.2-1.8L32 10h-6zm3 14a7.5 7.5 0 110 15 7.5 7.5 0 010-15zm19 14l-1 3a9 9 0 00-2.8 1.2l-2.8-1.4-2.8 2.8 1.4 2.8a9 9 0 00-1.2 2.8l-3 1v4l3 1a9 9 0 001.2 2.8l-1.4 2.8 2.8 2.8 2.8-1.4a9 9 0 002.8 1.2l1 3h4l1-3a9 9 0 002.8-1.2l2.8 1.4 2.8-2.8-1.4-2.8a9 9 0 001.2-2.8l3-1v-4l-3-1a9 9 0 00-1.2-2.8l1.4-2.8-2.8-2.8-2.8 1.4a9 9 0 00-2.8-1.2l-1-3h-4zm2 9a5 5 0 110 10 5 5 0 010-10z"/></svg>`,
+            sapling: `<svg class="w-8 h-8" viewBox="0 0 64 64" fill="currentColor"><path d="M34 8c-5 2-8 8-6 14 1-4 4-8 8-10-1 6-3 14-4 21-3-5-8-9-15-9 1 7 6 12 13 12h1c0 5-1 9-1 13-8 1-14 4-17 9h38c-3-5-9-8-17-9 0-4 0-7 1-11 6-1 11-5 13-12-6 0-11 3-14 8 1-7 2-14 4-20 5-1 9-5 10-11-6-1-11 2-14 5z"/></svg>`,
+            megaphone: `<svg class="w-8 h-8" viewBox="0 0 64 64" fill="currentColor"><path d="M18 14c-5 0-9 8-9 18s4 18 9 18c2 0 4-1.5 5.5-4L44 38v-2l6-1v-6l-6-1v-2L23.5 18C22 15.5 20 14 18 14zm0 5c2.5 0 5 5.5 5 13s-2.5 13-5 13-5-5.5-5-13 2.5-13 5-13zm20 22l-3 13c-.5 2 1 4 3 4h4c2 0 3.5-1.5 4-3.5l2.5-11.5-10.5-2z"/></svg>`,
+            lighthouse: `<svg class="w-8 h-8" viewBox="0 0 64 64" fill="currentColor"><path d="M32 6l-7 8h14l-7-8zm-5 10v6h10v-6H27zm-3 8l-4 28h24l-4-28H24zm-10 30v4h36v-4H14z"/></svg>`,
+            flag: `<svg class="w-8 h-8" viewBox="0 0 64 64" fill="currentColor"><path d="M30 8v28l-18 20h44L36 35V22c5-2 10 2 15 0V10c-5 2-10-2-15 0V8h-6z"/></svg>`,
+            book: `<svg class="w-8 h-8" viewBox="0 0 64 64" fill="currentColor"><path d="M8 14v34c8-4 16-4 22 2V16c-6-6-14-6-22-2zm48 0c-8-4-16-4-22 2v34c6-6 14-6 22-2V14z"/></svg>`
+        };
+
+        const CATEGORY_LABELS = {
+            site: 'אתר / אפליקציה שבניתי',
+            lecture: 'חומרי הרצאה ומצגות',
+            guide: 'מדריך מקצועי',
+            tool: 'כלי עזר / תבנית'
+        };
+
+        const TIP_CATEGORY_LABELS = {
+            active: 'למידה פעילה וחקר',
+            reflection: 'רפלקציה ומטה-קוגניציה',
+            memory: 'זיכרון וקיבוע ידע',
+            engagement: 'מעורבות ולומדים'
+        };
+
+        // --- DEFAULT DATA (INCLUDING YOUR 3 TIPS) ---
+        const DEFAULT_ITEMS = [
+            {
+                id: 'item-1',
+                title: 'מחולל תוכניות עבודה ויעדים',
+                category: 'site',
+                lectureTag: 'הרצאת ניהול זמן ופרודוקטיביות',
+                url: 'https://example.com/goal-planner',
+                icon: 'flag',
+                desc: 'אפליקציית ווב שבניתי עבורכם שמפרקת מטרות שנתיות גדולות למשימות שבועיות ברורות ומדידות.',
+                content: 'איך להשתמש בכלי מאת מורן קומרז:\n1. היכנסו לאתר והגדירו את היעד המרכזי שלכם לרבעון הקרוב.\n2. המערכת תייצר עבורכם אוטומטית אבני דרך מומלצות.'
+            },
+            {
+                id: 'item-2',
+                title: 'סיכום ומצגת: ארגז הכלים לעידן ה-AI',
+                category: 'lecture',
+                lectureTag: 'סדנת בינה מלאכותית מעשית',
+                url: 'https://example.com/ai-presentation',
+                icon: 'megaphone',
+                desc: 'המצגת המלאה מההרצאה כולל כל הפרומפטים והקישורים שראינו יחד על הבמה מאת מורן קומרז.',
+                content: 'נקודות המפתח מההרצאה שלנו:\n• עקרון ה-Context: תמיד לתת למודל תפקיד, רקע וקהל יעד ברור.'
+            }
+        ];
+
+        const DEFAULT_TIPS = [
+            {
+                id: 'tip-1',
+                title: 'חוקרים ומנסחים – למידה מתוך מאמרים מקצועיים 📚',
+                category: 'active',
+                body: 'במקום להאכיל את הלומדים במסקנות או בתשובות הסופיות, תנו להם לחוות את החקר בעצמם.\n\nבחרו מאמר מקצועי קצר, נוהל עבודה מפורט או דוח הפקת לקחים עדכני שנכתב ביחידות הקצה שלכם:\n1. חלקו את הכיתה לקבוצות קטנות.\n2. הנחו את הלומדים לקרוא את מקור המידע שקיבלו ולחלץ ממנו את עקרונות הפעולה, המסקנות או את דרך העבודה.\n3. ולבסוף, לחשוב בעצמם על 2 דוגמאות שיכולות להסביר את העקרונות שניסחו או לכתוב תרגיל קצר / משימה שדרכה ניתן ללמוד את העקרונות שניסחו.\n4. לאחר מכן, כל זוג מעביר את התרגילים שניסח לזוג אחר ומבקש מהם לפתור אותו!\n\nכך כל הלומדים מתנסים בהבנה עמוקה של המסרים, מבצעים תהליך חשיבה עמוק ולבסוף מתרגלים את העקרונות שמצאו.\n\nחילוץ המסקנה או הכלל וניסוח תרגילים עבור אחרים דורש הבנה עמוקה של החומר ומפתח עצמאות ומנהיגות מקצועית! ✨\n\nכאן בשבילכם, מורן',
+                sourceTitle: 'המרחב הפדגוגי, משרד החינוך',
+                sourceUrl: 'https://pop.education.gov.il/teaching-tools/teaching-practices/search-teaching-practices/students-research-mathematics/'
+            },
+            {
+                id: 'tip-2',
+                title: 'לכתוב כדי להבין – רפלקציה מונחית בסיום משימה ✍️',
+                category: 'reflection',
+                body: 'ביצוע משימה הוא רק חצי מהלמידה, החצי השני هو פיענוח המשמעות שלה.\nאמצו שיגרה של כתיבה רפלקטיבית מונחית מיד לאחר הגשת תוצר / תרגול מעשי.\n\nבקשו מכל לומד לענות בכתב על 3 שאלות קצרות:\n1. איזה אתגר לא צפוי פגשתי במהלך הביצוע ואיך פתרתי אותו?\n2. באיזה שלב הרגשתי הכי בטוח ומדוע?\n3. איזה לקח מקצועי אקח איתי למשימה הבאה?\n\nביצוע תהליך חשיבה הפנימי וכתיבתו מפתחת מודעות מטה-קוגניטיבית, מעמיקה את שימור הידע והופכת ניסיון מקרי או חד פעמי למומחיות יציבה! 💡\n\nכאן בשבילכם, מורן',
+                sourceTitle: 'המרחב הפדגוגי, משרד החינוך',
+                sourceUrl: 'https://pop.education.gov.il/teaching-tools/teaching-practices/search-teaching-practices/reflective-writing/'
+            },
+            {
+                id: 'tip-3',
+                title: 'אל תציפו – תנו למוח זמן לקבע את המידע 🧠',
+                category: 'memory',
+                body: 'קרה לכם שהעברתם המון חומר חשוב, אבל שבוע אחר כך אף אחד לא זכר כלום?\nהמוח לא מסוגל לקלוט מידע חדש ברצף ללא הפוגות עיבוד!\n\nבכל 15–20 דקות של הדרכה – עצרו לדקה או שתיים:\n- תנו לחניכים לרשום לעצמם נקודה מרכזית.\n- בקשו מהם לשתף אחד את השני במושג אחד שהפתיע אותם/חידש להם.\n- תנו תרגול קצרצר שדורש היזכרות מהירה בחומר שנלמד עד כה.\n\nההפוגות הקטנות האלו מאפשרות למוח לקודד את הידע בזיכרון לטווח ארוך ולמנוע מחיקה מהירה! ⏳\n\nכאן בשבילכם, מורן',
+                sourceTitle: 'המרחב הפדגוגי, משרד החינוך',
+                sourceUrl: 'https://pop.education.gov.il/teaching-tools/teaching-practices/search-teaching-practices/measures-to-improve-memory/'
+            }
+        ];
+
+        // --- STATE ---
+        let items = [];
+        let tips = [];
+        let isAdmin = false;
+        let currentFilter = 'all';
+        let currentTipFilter = 'all';
+        let currentMainTab = 'tools';
+        let currentAdminTab = 'tools';
+        let pendingDeleteId = null;
+        let siteHeaders = {
+            title: 'ארגז הכלים שלי אליכם',
+            subtitle: 'ריכוז של כל האתרים, הכלים והתכנים המקצועיים שבניתי עבורכם – מורן קומרז. מגדלור מעשי שילווה אתכם גם אחרי שההרצאה מסתיימת – בחרו כלי או טיפ הדרכתי וצאו לדרך.',
+            scene: 'lighthouse'
+        };
+
+        // --- INIT ---
+        window.addEventListener('DOMContentLoaded', () => {
+            loadState();
+            applyHeadersToDOM();
+            setHeroScene(siteHeaders.scene || 'lighthouse');
+            renderItems();
+            renderTips();
+        });
+
+        function loadState() {
+            const savedItems = localStorage.getItem('lecturer_toolbox_items');
+            items = savedItems ? JSON.parse(savedItems) : [...DEFAULT_ITEMS];
+
+            const savedTips = localStorage.getItem('lecturer_toolbox_tips');
+            tips = savedTips ? JSON.parse(savedTips) : [...DEFAULT_TIPS];
+
+            const savedHeaders = localStorage.getItem('lecturer_toolbox_headers');
+            if (savedHeaders) {
+                try { siteHeaders = JSON.parse(savedHeaders); } catch(e){}
+            }
+        }
+
+        function saveState() {
+            localStorage.setItem('lecturer_toolbox_items', JSON.stringify(items));
+            localStorage.setItem('lecturer_toolbox_tips', JSON.stringify(tips));
+            localStorage.setItem('lecturer_toolbox_headers', JSON.stringify(siteHeaders));
+            updateStats();
+        }
+
+        function updateStats() {
+            document.getElementById('stat-total').textContent = items.length + tips.length;
+            const sitesCount = items.filter(i => i.category === 'site').length;
+            document.getElementById('stat-sites').textContent = sitesCount;
+        }
+
+        // --- MAIN TABS SWITCHER (Tools vs Tips) ---
+        function switchMainTab(tab) {
+            currentMainTab = tab;
+            const toolsSec = document.getElementById('section-tools');
+            const tipsSec = document.getElementById('section-tips');
+            const toolsBtn = document.getElementById('main-tab-tools');
+            const tipsBtn = document.getElementById('main-tab-tips');
+
+            if (tab === 'tools') {
+                toolsSec.classList.remove('hidden');
+                tipsSec.classList.add('hidden');
+                toolsBtn.className = 'px-6 py-3 rounded-2xl font-black text-base transition bg-sage-900 text-cream shadow-md border-2 border-sage-800 flex items-center gap-2';
+                tipsBtn.className = 'px-6 py-3 rounded-2xl font-black text-base transition bg-cream/90 text-sage-900 hover:bg-sage-200 border-2 border-sage-800/40 shadow-sm flex items-center gap-2';
+            } else {
+                toolsSec.classList.add('hidden');
+                tipsSec.classList.remove('hidden');
+                tipsBtn.className = 'px-6 py-3 rounded-2xl font-black text-base transition bg-sage-900 text-cream shadow-md border-2 border-sage-800 flex items-center gap-2';
+                toolsBtn.className = 'px-6 py-3 rounded-2xl font-black text-base transition bg-cream/90 text-sage-900 hover:bg-sage-200 border-2 border-sage-800/40 shadow-sm flex items-center gap-2';
+                renderTips();
+            }
+        }
+
+        // --- ADMIN TABS SWITCHER ---
+        function switchAdminTab(tab) {
+            currentAdminTab = tab;
+            const tForm = document.getElementById('item-form');
+            const tipForm = document.getElementById('tip-form');
+            const tBtn = document.getElementById('admin-tab-tools');
+            const tipBtn = document.getElementById('admin-tab-tips');
+
+            if (tab === 'tools') {
+                tForm.classList.remove('hidden');
+                tipForm.classList.add('hidden');
+                tBtn.className = 'px-4 py-2 rounded-lg text-sm font-bold bg-sage-700 text-cream transition';
+                tipBtn.className = 'px-4 py-2 rounded-lg text-sm font-bold bg-sage-800 text-sage-300 hover:bg-sage-700 transition';
+            } else {
+                tForm.classList.add('hidden');
+                tipForm.classList.remove('hidden');
+                tipBtn.className = 'px-4 py-2 rounded-lg text-sm font-bold bg-sage-700 text-cream transition';
+                tBtn.className = 'px-4 py-2 rounded-lg text-sm font-bold bg-sage-800 text-sage-300 hover:bg-sage-700 transition';
+            }
+        }
+
+        // --- HERO SCENE ---
+        function setHeroScene(sceneName) {
+            siteHeaders.scene = sceneName;
+            saveState();
+            ['lighthouse', 'tree', 'mountain'].forEach(s => {
+                const svgEl = document.getElementById(`scene-${s}`);
+                const btnEl = document.getElementById(`scene-btn-${s}`);
+                if (s === sceneName) {
+                    svgEl.classList.remove('hidden');
+                    btnEl.classList.add('bg-sage-800', 'text-cream');
+                } else {
+                    svgEl.classList.add('hidden');
+                    btnEl.classList.remove('bg-sage-800', 'text-cream');
+                }
+            });
+        }
+
+        // --- RENDER TOOLS ---
+        function renderItems() {
+            const grid = document.getElementById('items-grid');
+            const emptyState = document.getElementById('empty-state');
+            const searchQuery = document.getElementById('search-input').value.trim().toLowerCase();
+            updateStats();
+
+            const filtered = items.filter(item => {
+                const matchesCat = currentFilter === 'all' || item.category === currentFilter;
+                const matchesSearch = !searchQuery || item.title.toLowerCase().includes(searchQuery) || item.desc.toLowerCase().includes(searchQuery);
+                return matchesCat && matchesSearch;
+            });
+
+            if (filtered.length === 0) {
+                grid.innerHTML = '';
+                emptyState.classList.remove('hidden');
+                return;
+            }
+            emptyState.classList.add('hidden');
+
+            grid.innerHTML = filtered.map(item => `
+                <article class="tool-card rounded-2xl border-2 border-sage-800/25 p-6 flex flex-col justify-between relative group">
+                    ${isAdmin ? `
+                    <div class="flex items-center gap-1.5 mb-4 pb-3 border-b border-sage-400/40">
+                        <span class="text-xs font-bold text-sage-700 ml-auto">ניהול:</span>
+                        <button onclick="editItem('${item.id}')" class="px-2.5 py-1 bg-sage-800 text-cream rounded text-xs font-bold">עריכה</button>
+                        <button onclick="deleteItem('${item.id}')" class="px-2.5 py-1 bg-red-800 text-cream rounded text-xs font-bold">מחיקה</button>
+                    </div>` : ''}
+                    <div>
+                        <div class="flex items-start justify-between gap-3 mb-4">
+                            <div class="w-14 h-14 rounded-2xl bg-sage-800 text-cream flex items-center justify-center stamp-effect shadow-md shrink-0">
+                                ${ICONS[item.icon] || ICONS.gears}
+                            </div>
+                            <span class="text-xs font-bold px-2.5 py-1 rounded-full bg-sage-300/80 text-sage-950 border border-sage-600/30">
+                                ${CATEGORY_LABELS[item.category] || 'תוכן'}
+                            </span>
+                        </div>
+                        <h3 class="font-serif text-xl sm:text-2xl font-bold text-sage-950 mb-2 leading-snug">${escapeHtml(item.title)}</h3>
+                        <p class="text-sage-800 text-sm leading-relaxed mb-4">${escapeHtml(item.desc)}</p>
+                        <div class="text-xs font-bold text-sage-700 mb-4 flex items-center gap-1.5 bg-sage-200/60 px-2.5 py-1 rounded-md w-fit">
+                            <span class="w-1.5 h-1.5 rounded-full bg-sage-800"></span>
+                            <span>נבנה ע״י מורן קומרז</span>
+                        </div>
+                    </div>
+                    <div class="pt-4 border-t border-sage-400/40 flex items-center justify-between gap-2.5">
+                        <button type="button" onclick="openReaderModal('${item.id}')" class="flex-1 px-3.5 py-2.5 min-h-[44px] rounded-xl text-xs font-bold text-sage-900 bg-sage-200/90 hover:bg-sage-300 flex items-center justify-center gap-1.5">
+                            פרטים והנחיות
+                        </button>
+                        ${item.url ? `
+                        <a href="${escapeHtml(item.url)}" target="_blank" rel="noopener noreferrer" class="flex-1 px-4 py-2.5 min-h-[44px] rounded-xl text-xs font-bold bg-sage-900 text-cream hover:bg-sage-800 flex items-center justify-center gap-1.5 shadow-sm">
+                            כניסה לאתר
+                        </a>` : ''}
+                    </div>
+                </article>
+            `).join('');
+        }
+
+        // --- RENDER TIPS ---
+        function renderTips() {
+            const grid = document.getElementById('tips-grid');
+            const emptyState = document.getElementById('empty-tips-state');
+            const searchQuery = document.getElementById('search-tips-input').value.trim().toLowerCase();
+
+            const filtered = tips.filter(tip => {
+                const matchesCat = currentTipFilter === 'all' || tip.category === currentTipFilter;
+                const matchesSearch = !searchQuery || tip.title.toLowerCase().includes(searchQuery) || tip.body.toLowerCase().includes(searchQuery);
+                return matchesCat && matchesSearch;
+            });
+
+            if (filtered.length === 0) {
+                grid.innerHTML = '';
+                emptyState.classList.remove('hidden');
+                return;
+            }
+            emptyState.classList.add('hidden');
+
+            grid.innerHTML = filtered.map(tip => `
+                <article class="tip-card rounded-2xl border-2 border-sage-800/25 p-6 flex flex-col justify-between relative">
+                    ${isAdmin ? `
+                    <div class="flex items-center gap-1.5 mb-4 pb-3 border-b border-sage-400/40">
+                        <span class="text-xs font-bold text-sage-700 ml-auto">ניהול טיפ:</span>
+                        <button onclick="editTip('${tip.id}')" class="px-2.5 py-1 bg-sage-800 text-cream rounded text-xs font-bold">עריכה</button>
+                        <button onclick="deleteTip('${tip.id}')" class="px-2.5 py-1 bg-red-800 text-cream rounded text-xs font-bold">מחיקה</button>
+                    </div>` : ''}
+                    <div>
+                        <div class="flex items-center justify-between gap-2 mb-3">
+                            <span class="text-xs font-bold px-3 py-1 rounded-full bg-sage-800 text-cream">
+                                ${TIP_CATEGORY_LABELS[tip.category] || 'הדרכה'}
+                            </span>
+                            <span class="text-xs font-bold text-sage-700">מאת: מורן קומרז</span>
+                        </div>
+                        <h3 class="font-serif text-xl font-bold text-sage-950 mb-3">${escapeHtml(tip.title)}</h3>
+                        <div class="bg-sage-100/90 p-4 rounded-xl text-sm sm:text-base leading-relaxed text-sage-950 whitespace-pre-line mb-4 border border-sage-400/40">${escapeHtml(tip.body)}</div>
+                        
+                        ${tip.sourceTitle ? `
+                        <div class="text-xs text-sage-800 mb-4 bg-sage-200/50 p-2.5 rounded-lg flex items-center justify-between">
+                            <span><strong>למקור המידע:</strong> ${escapeHtml(tip.sourceTitle)}</span>
+                            ${tip.sourceUrl ? `<a href="${escapeHtml(tip.sourceUrl)}" target="_blank" rel="noopener noreferrer" class="text-sage-950 font-bold underline hover:text-sage-600">קישור למקור</a>` : ''}
+                        </div>` : ''}
+                    </div>
+                    <div class="pt-3 border-t border-sage-400/30 flex items-center justify-between">
+                        <span class="text-xs font-bold text-sage-700">ארגז הכלים של מורן קומרז</span>
+                        <button onclick="copyTipToClipboard(${JSON.stringify(tip.title + '\n\n' + tip.body)})" class="px-3.5 py-2 bg-sage-900 text-cream rounded-xl text-xs font-bold hover:bg-sage-800 transition flex items-center gap-1.5 shadow-sm">
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 5H6a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2v-1M8 5a2 2 0 002 2h2a2 2 0 002-2M8 5a2 2 0 012-2h2a2 2 0 012 2m0 0h2a2 2 0 012 2v3m2 4H10m0 0l3-3m-3 3l3 3"/></svg>
+                            <span>העתקת טיפ</span>
+                        </button>
+                    </div>
+                </article>
+            `).join('');
+        }
+
+        // --- FILTERING ---
+        function setFilter(cat) {
+            currentFilter = cat;
+            document.querySelectorAll('.cat-btn').forEach(btn => {
+                const isSel = btn.dataset.cat === cat;
+                btn.setAttribute('aria-selected', isSel);
+                btn.className = `cat-btn shrink-0 px-4 py-2.5 min-h-[42px] rounded-xl text-xs sm:text-sm font-bold transition ${isSel ? 'bg-sage-900 text-cream shadow-sm' : 'bg-sage-200/80 text-sage-900 hover:bg-sage-300'}`;
+            });
+            renderItems();
+        }
+
+        function setTipFilter(cat) {
+            currentTipFilter = cat;
+            document.querySelectorAll('.tip-cat-btn').forEach(btn => {
+                const isSel = btn.dataset.tipcat === cat;
+                btn.setAttribute('aria-selected', isSel);
+                btn.className = `tip-cat-btn shrink-0 px-4 py-2.5 min-h-[42px] rounded-xl text-xs sm:text-sm font-bold transition ${isSel ? 'bg-sage-900 text-cream shadow-sm' : 'bg-sage-200/80 text-sage-900 hover:bg-sage-300'}`;
+            });
+            renderTips();
+        }
+
+        function resetFilters() { document.getElementById('search-input').value = ''; setFilter('all'); }
+        function resetTipFilters() { document.getElementById('search-tips-input').value = ''; setTipFilter('all'); }
+
+        // --- ADMIN LOGIN ---
+        function handleModeToggle() {
+            if (isAdmin) {
+                isAdmin = false;
+                updateAdminUI();
+            } else {
+                const modal = document.getElementById('login-modal');
+                document.getElementById('admin-pin-input').value = '';
+                document.getElementById('login-error').classList.add('hidden');
+                modal.classList.remove('hidden');
+                modal.classList.add('flex');
+                setTimeout(() => document.getElementById('admin-pin-input').focus(), 100);
+            }
+        }
+        function closeLoginModal() { document.getElementById('login-modal').classList.add('hidden'); document.getElementById('login-modal').classList.remove('flex'); }
+
+        function verifyAdminLogin(e) {
+            e.preventDefault();
+            const pin = document.getElementById('admin-pin-input').value.trim();
+            if (pin === '1234') {
+                isAdmin = true;
+                closeLoginModal();
+                updateAdminUI();
+                document.getElementById('admin-panel').scrollIntoView({ behavior: 'smooth' });
+            } else {
+                document.getElementById('login-error').classList.remove('hidden');
+            }
+        }
+
+        function updateAdminUI() {
+            const panel = document.getElementById('admin-panel');
+            const badge = document.getElementById('admin-badge');
+            const btnText = document.getElementById('mode-btn-text');
+            if (isAdmin) {
+                panel.classList.remove('hidden');
+                badge.classList.remove('hidden');
+                btnText.textContent = 'תצוגת אורח';
+            } else {
+                panel.classList.add('hidden');
+                badge.classList.add('hidden');
+                btnText.textContent = 'אזור מרצה';
+                resetForm();
+                resetTipForm();
+            }
+            renderItems();
+            renderTips();
+        }
+
+        // --- TOOLS CRUD ---
+        function saveItem(e) {
+            e.preventDefault();
+            const idInput = document.getElementById('item-id').value;
+            const newItem = {
+                id: idInput || 'item-' + Date.now(),
+                title: document.getElementById('item-title').value.trim(),
+                category: document.getElementById('item-category').value,
+                lectureTag: document.getElementById('item-lecture-tag').value.trim(),
+                url: document.getElementById('item-url').value.trim(),
+                icon: document.getElementById('item-icon').value,
+                desc: document.getElementById('item-desc').value.trim(),
+                content: document.getElementById('item-content').value.trim()
+            };
+            if (idInput) {
+                const idx = items.findIndex(i => i.id === idInput);
+                if (idx > -1) items[idx] = newItem;
+            } else {
+                items.unshift(newItem);
+            }
+            saveState();
+            resetForm();
+            renderItems();
+            showToast('הכלי נשמר בהצלחה! אל תשכח ללחוץ על "פרסום שינויים לכולם" כדי לעדכן בגיטהאב.');
+        }
+
+        function editItem(id) {
+            const item = items.find(i => i.id === id);
+            if (!item) return;
+            document.getElementById('item-id').value = item.id;
+            document.getElementById('item-title').value = item.title;
+            document.getElementById('item-category').value = item.category;
+            document.getElementById('item-lecture-tag').value = item.lectureTag || '';
+            document.getElementById('item-url').value = item.url || '';
+            document.getElementById('item-icon').value = item.icon || 'gears';
+            document.getElementById('item-desc').value = item.desc;
+            document.getElementById('item-content').value = item.content || '';
+            document.getElementById('cancel-edit-btn').classList.remove('hidden');
+            document.getElementById('admin-panel').scrollIntoView({ behavior: 'smooth' });
+        }
+
+        function deleteItem(id) {
+            pendingDeleteId = id;
+            const modal = document.getElementById('confirm-modal');
+            modal.classList.remove('hidden');
+            modal.classList.add('flex');
+            document.getElementById('confirm-delete-btn').onclick = () => {
+                items = items.filter(i => i.id !== pendingDeleteId);
+                saveState();
+                renderItems();
+                closeConfirmModal();
+                showToast('הפריט נמחק בהצלחה');
+            };
+        }
+
+        function resetForm() {
+            document.getElementById('item-form').reset();
+            document.getElementById('item-id').value = '';
+            document.getElementById('cancel-edit-btn').classList.add('hidden');
+        }
+
+        // --- TIPS CRUD ---
+        function saveTip(e) {
+            e.preventDefault();
+            const idInput = document.getElementById('tip-id').value;
+            const newTip = {
+                id: idInput || 'tip-' + Date.now(),
+                title: document.getElementById('tip-title').value.trim(),
+                category: document.getElementById('tip-category').value,
+                body: document.getElementById('tip-body').value.trim(),
+                sourceTitle: document.getElementById('tip-source-title').value.trim(),
+                sourceUrl: document.getElementById('tip-source-url').value.trim()
+            };
+            if (idInput) {
+                const idx = tips.findIndex(t => t.id === idInput);
+                if (idx > -1) tips[idx] = newTip;
+            } else {
+                tips.unshift(newTip);
+            }
+            saveState();
+            resetTipForm();
+            renderTips();
+            showToast('הטיפ נשמר בהצלחה! אל תשכח ללחוץ על "פרסום שינויים לכולם".');
+        }
+
+        function editTip(id) {
+            const tip = tips.find(t => t.id === id);
+            if (!tip) return;
+            document.getElementById('tip-id').value = tip.id;
+            document.getElementById('tip-title').value = tip.title;
+            document.getElementById('tip-category').value = tip.category;
+            document.getElementById('tip-body').value = tip.body;
+            document.getElementById('tip-source-title').value = tip.sourceTitle || '';
+            document.getElementById('tip-source-url').value = tip.sourceUrl || '';
+            document.getElementById('cancel-tip-edit-btn').classList.remove('hidden');
+            document.getElementById('admin-panel').scrollIntoView({ behavior: 'smooth' });
+        }
+
+        function deleteTip(id) {
+            pendingDeleteId = id;
+            const modal = document.getElementById('confirm-modal');
+            modal.classList.remove('hidden');
+            modal.classList.add('flex');
+            document.getElementById('confirm-delete-btn').onclick = () => {
+                tips = tips.filter(t => t.id !== pendingDeleteId);
+                saveState();
+                renderTips();
+                closeConfirmModal();
+                showToast('הטיפ נמחק בהצלחה');
+            };
+        }
+
+        function resetTipForm() {
+            document.getElementById('tip-form').reset();
+            document.getElementById('tip-id').value = '';
+            document.getElementById('cancel-tip-edit-btn').classList.add('hidden');
+        }
+
+        // --- GITHUB DEPLOYMENT / DOWNLOAD GENERATED HTML ---
+        function downloadUpdatedWebsite() {
+            // Generates a self-contained HTML file pre-loaded with current items & tips!
+            const htmlContent = document.documentElement.outerHTML;
+            const blob = new Blob([htmlContent], { type: 'text/html;charset=utf-8' });
+            const url = URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = 'index.html';
+            a.click();
+            URL.revokeObjectURL(url);
+            showToast('קובץ ה-index.html המעודכן הורד בהצלחה! העלה אותו לגיטהאב וכולם יראו את השינויים.');
+        }
+
+        // --- READER MODAL ---
+        function openReaderModal(id) {
+            const item = items.find(i => i.id === id);
+            if (!item) return;
+            document.getElementById('modal-icon-box').innerHTML = ICONS[item.icon] || ICONS.gears;
+            document.getElementById('modal-tag').textContent = item.lectureTag || CATEGORY_LABELS[item.category];
+            document.getElementById('modal-title').textContent = item.title;
+            document.getElementById('modal-desc').textContent = item.desc;
+            
+            const contentBox = document.getElementById('modal-content');
+            if (item.content) { contentBox.textContent = item.content; contentBox.classList.remove('hidden'); }
+            else { contentBox.classList.add('hidden'); }
+
+            const linkBtn = document.getElementById('modal-link-btn');
+            if (item.url) { linkBtn.href = item.url; linkBtn.classList.remove('hidden'); }
+            else { linkBtn.classList.add('hidden'); }
+
+            const modal = document.getElementById('reader-modal');
+            modal.classList.remove('hidden');
+            modal.classList.add('flex');
+        }
+        function closeReaderModal() { document.getElementById('reader-modal').classList.add('hidden'); document.getElementById('reader-modal').classList.remove('flex'); }
+        function closeConfirmModal() { document.getElementById('confirm-modal').classList.add('hidden'); document.getElementById('confirm-modal').classList.remove('flex'); }
+
+        function showToast(msg) {
+            const t = document.getElementById('toast-msg');
+            document.getElementById('toast-text').textContent = msg;
+            t.classList.remove('hidden'); t.classList.add('flex');
+            setTimeout(() => { t.classList.add('hidden'); t.classList.remove('flex'); }, 4000);
+        }
+
+        function copyTipToClipboard(text) {
+            const textarea = document.createElement('textarea');
+            textarea.value = text;
+            document.body.appendChild(textarea);
+            textarea.select();
+            document.execCommand('copy');
+            document.body.removeChild(textarea);
+            showToast('הטיפ הועתק בהצלחה ללוח!');
+        }
+
+        // --- HEADERS ---
+        function openHeaderSettingsModal() {
+            document.getElementById('custom-main-title').value = siteHeaders.title;
+            document.getElementById('custom-sub-title').value = siteHeaders.subtitle;
+            document.getElementById('header-settings-modal').classList.remove('hidden');
+            document.getElementById('header-settings-modal').classList.add('flex');
+        }
+        function closeHeaderSettingsModal() { document.getElementById('header-settings-modal').classList.add('hidden'); document.getElementById('header-settings-modal').classList.remove('flex'); }
+        function saveCustomHeaders() {
+            siteHeaders.title = document.getElementById('custom-main-title').value.trim() || siteHeaders.title;
+            siteHeaders.subtitle = document.getElementById('custom-sub-title').value.trim() || siteHeaders.subtitle;
+            saveState();
+            applyHeadersToDOM();
+            closeHeaderSettingsModal();
+            showToast('הכותרות עודכנו בהצלחה!');
+        }
+        function applyHeadersToDOM() {
+            document.getElementById('hero-title').textContent = siteHeaders.title;
+            document.getElementById('nav-title').textContent = siteHeaders.title;
+            document.getElementById('footer-title').textContent = siteHeaders.title;
+            document.getElementById('hero-subtitle').textContent = siteHeaders.subtitle;
+        }
+
+        function exportData() {
+            const dataStr = JSON.stringify({ siteHeaders, items, tips }, null, 2);
+            const blob = new Blob([dataStr], { type: 'application/json' });
+            const url = URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            a.href = url; a.download = 'toolbox-backup.json'; a.click();
+            URL.revokeObjectURL(url);
+        }
+        function importData(e) {
+            const file = e.target.files[0];
+            if (!file) return;
+            const reader = new FileReader();
+            reader.onload = function(evt) {
+                try {
+                    const data = JSON.parse(evt.target.result);
+                    if (data.items) items = data.items;
+                    if (data.tips) tips = data.tips;
+                    if (data.siteHeaders) { siteHeaders = data.siteHeaders; applyHeadersToDOM(); }
+                    saveState(); renderItems(); renderTips();
+                    showToast('הנתונים שוחזרו בהצלחה!');
+                } catch(err) { showToast('קובץ שגוי'); }
+            };
+            reader.readAsText(file);
+        }
+
+        function escapeHtml(str) {
+            if (!str) return '';
+            return str.replace(/[&<>"']/g, m => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'})[m]);
+        }
+    </script>
+
+
+</body></html>
