@@ -139,6 +139,31 @@
                     <span>מצב ניהול פעיל</span>
                 </div>
 
+<!-- WhatsApp & Mode Controls -->
+            <div class="flex items-center gap-1.5 sm:gap-2 shrink-0">
+                <!-- כפתור וואטסאפ -->
+                <a href="http://wa.me/moran_komeraz" target="_blank" rel="noopener noreferrer" 
+                   class="flex items-center gap-1.5 px-2.5 sm:px-3.5 py-1.5 sm:py-2 min-h-[38px] sm:min-h-[42px] rounded-xl text-xs sm:text-sm font-bold bg-[#25D366] text-white hover:bg-[#20ba59] active:scale-95 transition-all shadow-sm">
+                    <svg class="w-4 h-4 sm:w-4.5 sm:h-4.5 shrink-0" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                        <path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.711 2.598 2.669-.699c.969.54 1.77.818 2.791.818 3.18 0 5.767-2.587 5.767-5.766.001-3.182-2.585-5.804-5.767-5.804zm8.469 5.766c0 4.686-3.814 8.499-8.5 8.499-1.42 0-2.825-.37-4.062-1.077l-4.938 1.291 1.317-4.811c-.792-1.303-1.217-2.8-1.217-4.341 0-4.686 3.814-8.5 8.5-8.5 4.686 0 8.9 3.814 8.9 8.439z"/>
+                    </svg>
+                    <span class="hidden sm:inline">דברו איתי</span>
+                </a>
+
+                <div id="admin-badge" class="items-center gap-1.5 bg-sage-800 text-cream px-2 sm:px-3 py-1 rounded-full text-[11px] sm:text-xs font-bold shadow-sm hidden">
+                    <span class="w-1.5 h-1.5 sm:w-2 sm:h-2 rounded-full bg-green-400 animate-ping"></span>
+                    <span class="hidden sm:inline">מצב ניהול פעיל</span>
+                    <span class="sm:hidden">ניהול</span>
+                </div>
+
+                <button id="toggle-mode-btn" onclick="handleModeToggle()" class="flex items-center gap-1 sm:gap-2 px-2.5 sm:px-4 py-1.5 sm:py-2 min-h-[38px] sm:min-h-[42px] rounded-xl text-xs sm:text-sm font-bold border-2 border-sage-800 text-sage-900 hover:bg-sage-800 hover:text-cream active:scale-95 transition-all shadow-sm">
+                    <svg class="w-3.5 h-3.5 sm:w-4 sm:h-4 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"></path>
+                    </svg>
+                    <span id="mode-btn-text">אזור מרצה</span>
+                </button>
+            </div>
+                
                 <button id="toggle-mode-btn" onclick="handleModeToggle()" class="flex items-center gap-1.5 sm:gap-2 px-3 sm:px-4 py-2 min-h-[42px] rounded-xl text-xs sm:text-sm font-bold border-2 border-sage-800 text-sage-900 hover:bg-sage-800 hover:text-cream active:scale-95 transition-all shadow-sm">
                     <svg class="w-4 h-4 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"></path>
