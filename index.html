@@ -855,7 +855,7 @@
         let pendingDeleteId = null;
         let siteHeaders = {
             title: 'ארגז הכלים שלי אליכם',
-            subtitle: 'ריכוז של כל האתרים, הכלים והתכנים המקצועיים שבניתי עבורכם. מגדלור מעשי שילווה אתכם גם אחרי שההרצאה מסתיימת – בחרו כלי או טיפ הדרכתי וצאו לדרך.',
+            subtitle: 'ריכזתי עבורכם את כל האתרים, הכלים והתכנים המקצועיים שבניתי עבורכם במקום אחד נגיש!<br>הם כאן לשימושכם תמיד,<br>כאן בשבילכם לכל דבר!<br>מורן',
             scene: 'mountain'
         };
 
@@ -1296,7 +1296,7 @@
             document.getElementById('hero-title').textContent = siteHeaders.title;
             document.getElementById('nav-title').textContent = siteHeaders.title;
             document.getElementById('footer-title').textContent = siteHeaders.title;
-            document.getElementById('hero-subtitle').textContent = siteHeaders.subtitle;
+            document.getElementById('hero-subtitle').innerHTML = siteHeaders.subtitle;
         }
 
         function exportData() {
